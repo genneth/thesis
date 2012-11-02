@@ -217,11 +217,10 @@ wide false
 sideways false
 status open
 
-\begin_layout Plain Layout
-\align center
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Graphics
 	filename oes-basal-pictures.jpg
-	lyxscale 50
 	width 50text%
 
 \end_inset
