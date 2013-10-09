@@ -586,6 +586,12 @@ Stochastic Progenitors in Oesophageal Epithelium
 \end_layout
 
 \begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ee-background-and-motivation"
+
+\end_inset
+
 Background and motivation
 \end_layout
 
@@ -844,7 +850,7 @@ reference "sec:model"
 
  we will describe how the experimental data identifies the dynamics of a
  single progenitor cell population allowing us to formulate a simple model
- of EE turnover.
+ of epithelial turnover.
  In section
 \begin_inset space ~
 \end_inset
@@ -1105,11 +1111,11 @@ reference "fig:oes-basal-raw"
 
 \begin_layout Standard
 Taken together, the results above suggest that, as in interfollicular epidermis,
- EE is maintained by a single cycling progenitor cell population in which
- cell division can lead to all three possible fate outcomes; two daughters
- that go on to divide, two cells that exit cycle and then stratify out of
- the basal layer, or one daughter that goes on to divide and one that differenti
-ates 
+ oesophageal epithelium is maintained by a single cycling progenitor cell
+ population in which cell division can lead to all three possible fate outcomes;
+ two daughters that go on to divide, two cells that exit cycle and then
+ stratify out of the basal layer, or one daughter that goes on to divide
+ and one that differentiates 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Clayton2007,Doupe2010"
@@ -1346,8 +1352,8 @@ where
  or cell-autonomous regulation in which the fate outcome following division
  is uncorrelated with the behaviour of neighbouring cells.
  In previous studies, it has been shown that, in the two-dimensional geometry
- pertinent to EE, the long-term clonal dynamics is largely insensitive to
- this choice 
+ pertinent to oesophageal epithelium, the long-term clonal dynamics is largely
+ insensitive to this choice 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Klein2008"
@@ -1533,7 +1539,10 @@ The data itself is acquired in the form of a set of frequencies
 
 , where the counts are small, we would have to employ complex methods such
  as ad-hoc binning or continuity corrections.
- As such, we have elected to use a more Bayesian approach, which allows
+ In addition, given the difficulty of obtaining large sample sizes, we needed
+ a procedure which would maximise the value of the experiments, and perform
+ optimal inference from them.
+ As such, we have elected to use a more Bayesian approach, which also allows
  us to analyse the experiment with no manipulation of the data.
 \end_layout
 
@@ -2590,10 +2599,10 @@ name "fig:oes-atra-jump"
 \series bold
 Left
 \series default
-: number of basal cells per clone in EE treated by applying atRA for 9 days,
- starting 3 weeks post-induction: orange triangles indicate experimental
- data, blue line indicates prediction of model (instantaneous change from
- model in 
+: number of basal cells per clone in oesophageal epithelium treated by applying
+ atRA for 9 days, starting 3 weeks post-induction: orange triangles indicate
+ experimental data, blue line indicates prediction of model (instantaneous
+ change from model in 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:oes-normal-model"
@@ -2652,10 +2661,10 @@ Finally, the development of the EP model relied upon the observation of
  However, by focusing on clones with a total size greater than one, we eliminate
 d the potential signature of a second very slow-cycling or quiescent cell
  population.
- Although the existence of such a population in EE was ruled out by the
- H2B-GFP assay, with the predictions of the EP model, we can do back and
- question whether the dynamics of the single-cell clones are consistent
- with the ansatz of the modelling scheme.
+ Although the existence of such a population in oesophageal epithelium was
+ ruled out by the H2B-GFP assay, with the predictions of the EP model, we
+ can do back and question whether the dynamics of the single-cell clones
+ are consistent with the ansatz of the modelling scheme.
 \end_layout
 
 \begin_layout Standard
@@ -2740,8 +2749,9 @@ Conclusion
 \end_layout
 
 \begin_layout Standard
-We have shown that there is a population of progenitors in EE which maintains
- the tissue, which is modelled by a simple stochastic branching process.
+We have shown that there is a population of progenitors in oesophageal epitheliu
+m which maintains the tissue, which can be quantitatively modelled by a
+ simple stochastic branching process.
  The progenitors divide at a constant rate and chose one of three fates
  with fixed probabilities; differentiated cells stratify and eventually
  shed.
@@ -2769,6 +2779,242 @@ We have shown that there is a population of progenitors in EE which maintains
  Moreover, we have shown that this model can capture the effect of atRA
  treatment through a straightforward adjustment of the average EP cell division
  rate.
+ 
+\end_layout
+
+\begin_layout Standard
+It is interesting to note we have evidence that 
+\begin_inset Formula $r\neq\frac{1}{4}$
+\end_inset
+
+ (with very high confidence), which implies that the fate of sister cells
+ are not independent.
+ In other words, it is 
+\emph on
+not
+\emph default
+ the case that a progenitor divides and each daughter cell independently
+ chooses to differentiate.
+ As such, either the decision is made prior to division (potentially via
+ some asymmetric division of nuclear material) or post-mitosis by mutual
+ inhibition.
+\end_layout
+
+\begin_layout Standard
+An obvious extension of the present model is to incorporate some interaction
+ effect between cells.
+ As noted in the Introduction, such a model would naturally fall into the
+ voter model universality class, which has a characteristic 
+\begin_inset Formula $t/\log(t)$
+\end_inset
+
+ scaling for average surviving clone size.
+ The data here does not support such a scaling relation, although it is
+ possible that in the asymptotic regime where 
+\begin_inset Formula $t$
+\end_inset
+
+ is large, the extra factor of 
+\begin_inset Formula $\log(t)$
+\end_inset
+
+ is too close to a constant to be experimentally distinguished.
+ Furthermore, if the interactions extend over 
+\begin_inset Formula $d$
+\end_inset
+
+ cell diameters, then the asymptotic regime will be delayed by a time 
+\begin_inset Formula $\lambda d$
+\end_inset
+
+ which will remove traces of it from the short time behaviour (whilst the
+ typical clone radius is smaller than 
+\begin_inset Formula $d$
+\end_inset
+
+, it does not know that the tissue is 2-dimensionally, and behaves in the
+ mean-field fashion).
+\end_layout
+
+\begin_layout Standard
+Combined with the qualitative biological observations mentioned in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "sec:ee-background-and-motivation"
+
+\end_inset
+
+, we believe these progenitors to be the totality of proliferating cells
+ in the oesophageal epithelium, and are responsible for repair by switching
+ reversibly to a different program of fate choice, biased towards proliferation.
+ Furthermore, we conjecture that this mechanism is common to all keratinising
+ stratified epithelia, such as IFE, though there may also be separate population
+s of stem cells or progenitors which exist in particular anatomic niches.
+ The quantitative behaviour is probably not universal, as far as the parameters
+ 
+\begin_inset Formula $\lambda$
+\end_inset
+
+, 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ are concerned, though it would be interesting if any of them turn out to
+ be; clearly, accurate measurements of these parameters across a range of
+ tissues is an immediate direction for future work.
+\end_layout
+
+\begin_layout Standard
+We further conjecture that there are a discrete number of such proliferation
+ programs, as opposed to continuously adjustable parameters, based on the
+ admittedly aesthetic belief that it is so important that maintenance is
+ properly homoeostatic (since any deviation would need to be exponentially
+ small to be survivable over a finite lifespan) that it is precisely prescribed
+ by a separate underlying chemical pathway.
+ In other words, there exist distinct phases of cell kinetics, which may
+ be amenable to similar quantitative analysis.
+ So far, we have only elucidated the behaviour of the homoeostatic phase,
+ and have observed for the first time the repair phase 
+\emph on
+in vivo
+\emph default
+.
+ Quantitative understanding of the latter should be a rich arena for future
+ work.
+\end_layout
+
+\begin_layout Standard
+We also take this opportunity to comment on an issue not in the published
+ literature at all.
+ In previous work 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Clayton2007,Doupe2010"
+
+\end_inset
+
+, the parameters of the model were estimated in a different manner.
+ Recall that to define the model one needs three measurements.
+ The overall asymptotic rate 
+\begin_inset Formula $1/\tau=r\lambda/\rho$
+\end_inset
+
+ was estimated from the asymptotic regime, and could be measured with reasonable
+ accuracy.
+ The proportion of progenitors in the basal layer 
+\begin_inset Formula $\rho$
+\end_inset
+
+ was estimated by means of cell markers, in particular Ki67 was used as
+ a marker for proliferation; this choice is fairly standard in work on keratinoc
+ytes.
+ This gave the combination of 
+\begin_inset Formula $r\lambda$
+\end_inset
+
+, and the final parameter was chosen to make the short-time, non-universal
+ clone distribution agree with experiment.
+ In the ear, this gave 
+\begin_inset Formula $\rho=22\%$
+\end_inset
+
+, 
+\begin_inset Formula $r=8\%$
+\end_inset
+
+ and 
+\begin_inset Formula $1/\lambda\approx0.9\,\textrm{weeks}$
+\end_inset
+
+, a rate which agreed with existing estimates from more direct measurements.
+ It was discovered early on in the course of this work that a similar procedure
+ in oesophagus did 
+\emph on
+not 
+\emph default
+yield a sensible rate for the mean progenitor lifetime, especially in the
+ presence of atRA; the discrepancy could be repaired if one assumed that
+ Ki67 staining underestimates 
+\begin_inset Formula $\rho$
+\end_inset
+
+.
+ Careful experiments involving simultaneous staining of Ki67 and EdU in
+ various pulse-chase scenarios confirmed that Ki67 was unreliable as an
+ indicator of proliferation.
+ Our private theory revolves around its specific role in RNA transcription,
+ specifically how fast it turns off once commitment to differentiation is
+ made; it is plausible that during an extended period after the decision
+ is made, the cell is still transcriptionally active as it completely changes
+ its behaviour.
+ We hypothesized that the bias is worse in faster cycling tissues --- oesophagus
+ in normal state has 
+\begin_inset Formula $1/\lambda=0.5\,\textrm{weeks}$
+\end_inset
+
+ which decreases further to almost quarter of a week with atRA.
+ Indeed, it was partially this problem which motivated the methodology eventuall
+y taken, which infers the parameters of the model completely independently
+ from any biological markers, but purely from the observed fate outcome
+ in terms of clone sizes; the cost is the need to gather not only the distributi
+on of number of basal cells, but the joint distribution with suprabasal
+ cells as well.
+ 
+\end_layout
+
+\begin_layout Standard
+As a general point, we believe that this pivot away from biological markers
+ is a good thing, and complementary to existing practices.
+ Fundamentally, there is no such thing as 
+\begin_inset Quotes eld
+\end_inset
+
+proliferation marker
+\begin_inset Quotes erd
+\end_inset
+
+ or 
+\begin_inset Quotes eld
+\end_inset
+
+differentiation marker
+\begin_inset Quotes erd
+\end_inset
+
+, or indeed for that matter 
+\begin_inset Quotes eld
+\end_inset
+
+keratinocyte
+\begin_inset Quotes erd
+\end_inset
+
+ versus 
+\begin_inset Quotes eld
+\end_inset
+
+hematopoietic marker
+\begin_inset Quotes erd
+\end_inset
+
+.
+ They are simple antibodies which attach to particular molecules that we
+ have imposed a narrative upon.
+ Those molecules exist momentarily, but we try to assign teleological function
+ to them; we should not be amazed that this can work, and not surprised
+ when it fails a little.
+ Many experiments, for instance in the context of cancer, rely on the qualitativ
+e response from Ki67 as evidence of greater or lesser proliferation.
+ What we have observed is that in the limit of very fast cycle, the link
+ between proliferation and Ki67 response decouples and cannot be trusted
+ on a quantitative level.
+ The Jones group is continuing this line of investigation, and trying to
+ find more robust candidates for detecting proliferation, using the parameters
+ derived in this work as the baseline for comparison.
 \end_layout
 
 \begin_layout Chapter
