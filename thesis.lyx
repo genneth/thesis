@@ -26,7 +26,8 @@ logicalmkup
 
 \graphics default
 \default_output_format pdf2
-\output_sync 0
+\output_sync 1
+\output_sync_macro "\synctex=1"
 \bibtex_command default
 \index_command default
 \paperfontsize default
@@ -35,11 +36,11 @@ logicalmkup
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
+\pdf_bookmarksopenlevel 3
 \pdf_breaklinks false
 \pdf_pdfborder false
 \pdf_colorlinks false
-\pdf_backref false
+\pdf_backref section
 \pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
@@ -47,7 +48,7 @@ logicalmkup
 \use_esint 1
 \use_mhchem 1
 \use_mathdots 1
-\cite_engine basic
+\cite_engine natbib_numerical
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -98,7 +99,7 @@ Advances in genetic methods for lineage tracing offers a new way to observe
 
 \begin_layout Standard
 We begin by quantitatively studying mouse oesophageal lining, an extremely
- simple model tissue for stratified epithelia in homeoestasis.
+ simple model tissue for stratified epithelia in homoeostasis.
  After establishing that there exists only one progenitor population responsible
  for maintenance, we postulate a simple model of critical branching, and
  measure the parameters of the model from lineage tracing data.
@@ -130,12 +131,89 @@ Finally, we turn to the development of vertebrate central nervous system,
 Preface
 \end_layout
 
-\begin_layout LyX-Code
+\begin_layout Standard
+This dissertation describes work done between October 2010 and October 2013
+ at the Cavendish Laboratory, Cambridge, under the supervision of Prof.
+ Benjamin D.
+ Simons.
+\end_layout
 
+\begin_layout Standard
+The introductory chapter 1 contains a review of previous work which motivated
+ this thesis.
+ Chapters 2, 4 and 5 contains material that has been published.
+ The experiments described in chapter 2, 4 and 5 were respectively carried
+ out by the Jones group at the Hutchinson Laboratory in Cambridge
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+MRC Cancer Cell Unit, Hutchison-MRC Research Centre, Cambridge, UK.
+\end_layout
+
+\end_inset
+
+, the Cayouette group in the Cellular Neurobiology Research Unit in Montréal
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Cellular Neurobiology Research Unit, Institut de recherches cliniques de
+ Montréal, Montréal, QC H2W 1R7, Canada.
+\end_layout
+
+\end_inset
+
+, and the Harris group at the Department of Physiology in Cambridge
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Department of Physiology, Development, and Neuroscience, University of Cambridge
+, Downing Street, Cambridge CB2 3DY, UK
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This dissertation, except where specifically indicated in the text, is the
+ result of my own work and includes nothing which is the outcome of work
+ done in collaboration.
+ No parts of this thesis have been submitted for any other qualification.
+\end_layout
+
+\begin_layout Section*
+Statement of length
+\end_layout
+
+\begin_layout Standard
+This dissertation does not exceed 60,000 words, including tables, footnotes,
+ references and appendices.
 \end_layout
 
 \begin_layout Chapter*
 Acknowledgements
+\end_layout
+
+\begin_layout Standard
+I would like to thank all the collaborators, who happily and patiently shared
+ their results and insights.
+ Particular thanks go to Phil Jones, and his group, who extended their laborator
+y space and personal time for several hours a week for the benefit of my
+ education and understanding.
+ Thanks also to Bill Harris whose enthusiastically shared his immense knowledge
+ breadth and depth of neural development, and Jie He for his tireless work
+ in generating such exciting new data.
+ Above all, I would like to thank Ben Simons for his supervision, guidance
+ and saintly patience.
+\end_layout
+
+\begin_layout Standard
+Finally, I would like to thank my wife Karen for providing loving and forceful
+ motivation whenever needed.
 \end_layout
 
 \begin_layout Standard
@@ -151,40 +229,458 @@ LatexCommand tableofcontents
 Introduction
 \end_layout
 
-\begin_layout Chapter
-Stochastic Progenitors in Esophageal Epithelium
-\end_layout
-
 \begin_layout Section
-Chapter overview
+Background
 \end_layout
 
 \begin_layout Standard
-The esophageal lining in adult mice is composed of a stratified epithelium
- (Figure), which rapidly regenerates during adulthood to act as a protective
- lining.
- Similar to inter-follicular epidermis (IFE), it is composed of multiple
- layers of keratinocytes, sitting atop a membrane that separates it from
- the rest of the mucosa.
- As in IFE, proliferation is confined to the basal layer of cells; upon
- differentiation, the cells stratify from the basal layer, lose their nucleus
- and much cellular machinery to turn into large, flat cells which are no
- longer transcriptionally active.
- Unlike epidermis, the esophageal epithelium (EE) lacks any gross anatomical
- features such as hair follicles, instead being composed of an spatially
- and temporally homogeneous population of keratinocytes undergoing continuous
- division and loss.
- It is thus uniquely suited as a clean environment in which to dissect the
- functional behaviour of cells with regards to their fate choice, via lineage
- tracing by inducible genetic labelling techniques.
- Specifically, we use genetically modified mice which carry an Enhanced
- Yellow Flourescent Protein (EYFP) gene, muted by a stop-cassette; upon
- treatment with tamoxifen the gene is activated by deletion of the stop
- cassette, leading to the production of EYFP in that cell and all its progeny.
+It is still an outstanding question of biology how cells work together to
+ build large scale tissues.
+ Whilst cells individually are constrained to the two simple fates of division
+ or eventual death, it is poorly understood how cells might work in concert
+ to synchronise and regulate their fates 
+\emph on
+in situ
+\emph default
+ to grow, maintain, or repair tissue, or further how failures of such regulation
+ lead to failure or cancer.
+\end_layout
+
+\begin_layout Standard
+Traditionally, the problem has been tackled with a reductionist approach
+ of explicating the molecular mechanism within cells.
+ In particular, a large body of work now exist which delineate the various
+ gene and protein expression networks that modify cell fate.
+ A central challenge to this effort is the vast complexity of the uncovered
+ biochemical networks, which confound attempts to identify simple principles
+ and concepts which interact in predictable ways to allow comprehension
+ and prediction of a range of observations.
+ Instead, often the clearest biochemical dissection occur very far from
+ a typical environment, leading to difficulties, for example, in translating
+ cell fate choice in culture to that during regular maintenance.
+ 
+\end_layout
+
+\begin_layout Standard
+Instead, the work of Klein and Simons advocated a more phenomenological
+ approach, where by directly measuring and mathematically modelling quantitative
+ characteristics of tissues it becomes possible to infer the relevant underlying
+ dynamics of cells.
+ Typically, one would focus on behaviours which arise because of the large
+ number of cells and their interactions, which are robust to small changes
+ of the underlying cell-resolution biochemistry.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Clayton2007"
+
+\end_inset
+
+ showed that with modern techniques such as inducible genetic labelling
+ and confocal microscopy, it is indeed possible to collect such data and
+ carry out the program for interfollicular epidermis (IFE) in normal maintenance.
+ 
+\end_layout
+
+\begin_layout Standard
+In that case, cells in the IFE were modelled as non-interacting, each cell
+ independently choosing when to divide or permanently differentiate and
+ leave the basal layer.
+ The study of such systems has a long tradition in mathematical biology,
+ under the title of branching processes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Athreya2004"
+
+\end_inset
+
+.
+ A crucial theorem of that theory states that: assuming a population of
+ cells which maintain their number (i.e.
+ homoeostatic or in equilibrium), if one were to label a single cell and
+ count its progeny (a clone), then in the interesting case where some of
+ that clone continue to proliferate, their number would eventually (on average)
+ increase linearly with time, 
+\emph on
+independent of any other features of those cells
+\emph default
+.
+ In corollary, the chance of such a surviving clone must decrease as one
+ over time.
+ In particular, one makes no assumption about distributions of cell cycle
+ lengths, or the precise hierarchy leading from self-proliferation to differenti
+ation.
+ The only assumptions are independence and homoeostasis.
+\end_layout
+
+\begin_layout Standard
+This is in fact an example of 
+\emph on
+universal behaviour
+\emph default
+, a term borrowed from statistical physics to describe phenomena which only
+ occur in the presence of sufficiently large number of particles (here,
+ cells), and which do not depend on microscopic details, but rather on symmetrie
+s and dimensionality of the situation.
+ Such robustness of prediction allows for easy confirmation in experiments,
+ and indeed precisely this linear scaling was a central argument in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Clayton2007"
+
+\end_inset
+
+ as part of the evidence that there existed a fast-cycling, self-renewing
+ population of progenitors in IFE.
+ Note that it is only the linear scaling which is universal: the rate at
+ which the clone can be expected to grow is not, and will depend in complex
+ ways on the microscopic details.
+\end_layout
+
+\begin_layout Standard
+However, one might wonder about the assumption of independence.
+ Whilst relying on statistical averaging to achieve homoeostasis is nice
+ in theory, one cannot but feel that some negative feedback loop would be
+ more stable, especially in the presence of injury.
+ A simple model might be that of cells which differentiate and leave behind
+ a hole, which is filled by one of its neighbours --- as might be expected
+ for contact inhibition of progenitors.
+ Such models are known in the mathematical literature as 
+\emph on
+voter models
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "CLIFFORD1973"
+
+\end_inset
+
+.
+ If one imagines labelling each cell individually, a differentiating cell
+ getting replaced is the same as if that cell simply changed its label to
+ that of its neighbour --- analogous to how opinions spread in a group of
+ weak-willed voters.
+\end_layout
+
+\begin_layout Standard
+In analogy to our one-cell derived clone in the branching process, we can
+ ask what happens to a single labelled cell in a sea of unlabelled cells.
+ It is known 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bramson1980"
+
+\end_inset
+
+ that the answer depends crucially on the dimension of the space that the
+ cells live in.
+ Assuming that the clone survives, at large times: 
+\end_layout
+
+\begin_layout Itemize
+in 1D, the size eventually grows as square root of time: 
+\begin_inset Formula $\mathbb{E}\left[n|n>0\right]\sim\sqrt{t}$
+\end_inset
+
+;
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Notation: 
+\begin_inset Formula $f\sim g$
+\end_inset
+
+ means that in the appropriate limit, 
+\begin_inset Formula $f/g\in\Theta\left(c\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+in 2D, 
+\begin_inset Formula $\mathbb{E}\left[n|n>0\right]\sim t/\log\left(t\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+and in 3D (or, as a mathematical extension, above 3D), 
+\begin_inset Formula $\mathbb{E}\left[n|n>0\right]\sim t$
+\end_inset
+
+, just as if there were no interactions at all.
+ 
+\end_layout
+
+\begin_layout Standard
+Intuitively, in low dimensions, a cell is likely to be replaced by a cell
+ of the same label, leading to a sort of jamming where the boundary of the
+ clone does not grow very fast; in higher dimensions, a cell will be replaced
+ by a randomly labelled cell, and so each division will look very much random,
+ and indistinguishable from a non-interacting situation.
+ 
+\end_layout
+
+\begin_layout Standard
+To be precise, the results above have only been mathematically proven in
+ square lattices, and a few others regular lattices (hexagonal, for instance).
+ However, a body of numerical and theoretical work 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Bramson1979,Ben-Naim1996,Dornic2001,Dornic2005,Canet2005"
+
+\end_inset
+
+ suggest that the scaling is in fact universal, and do not depend on the
+ details of the geometry, or how the interaction works exactly.
+ For instance, it may be that cells are replaced not by immediate neighbours,
+ but rather by any within a few cell diameters.
+\end_layout
+
+\begin_layout Standard
+The one dimensional case appears to be realised in spermatozoa generation
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2010"
+
+\end_inset
+
+, where the germ line stem cells are confined to tubes and exhibit contact
+ inhibition.
+ It has been hypothesised 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2008"
+
+\end_inset
+
+ that in the IFE may exihibit the 2-dimensional case, but fundamentally,
+ the extra factor of
+\begin_inset Formula $\log\left(t\right)$
+\end_inset
+
+ is too close to a constant for achievable experiments to be seen: at short
+ times, the jamming has not really set in and clone sizes still scale as
+ 
+\begin_inset Formula $t$
+\end_inset
+
+, and once the dynamics approaches the universal limit (which may take months),
+ 
+\begin_inset Formula $t/\log\left(t\right)$
+\end_inset
+
+ between 1 month and 12 months is not easily distinguishable from a linear
+ function of time.
+\end_layout
+
+\begin_layout Section
+Limits of universality
+\end_layout
+
+\begin_layout Standard
+Whilst universal scaling is very useful for confirming that a particular
+ choice of basic symmetries and assumptions is sufficient to describe an
+ experiment, its very robustness against all manners of perturbations becomes
+ a liability when one wishes to extract from experiment some quantitative
+ measurements of the underlying process.
+ For instance, whilst in mouse IFE it is possible to measure the non-universal
+ rate constant associated with linear scaling of surviving clone sizes,
+ that constant is not related to the underlying cell-scale dynamics in an
+ obvious manner.
+ 
+\end_layout
+
+\begin_layout Standard
+Our view is that in addition to verifying the universal properties of a
+ model, one should also verify some non-universal properties, ideally with
+ the view of being able to 
+\emph on
+infer
+\emph default
+ the parameters from data.
+ In particular, due to the difficulty of obtaining observations, the inference
+ must be efficient, and maximally use the information contained in a relatively
+ small number of observations.
+\end_layout
+
+\begin_layout Section
+Outline of research
+\end_layout
+
+\begin_layout Standard
+The chapters of this thesis are based around publications by the author,
+ in collaboration with various experimental groups.
+ 
+\end_layout
+
+\begin_layout Standard
+Chapter 2 is a continuation of the collaboration with the Jones group, started
+ in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Clayton2007,Doupe2010"
+
+\end_inset
+
+, extending the understanding of progenitors in stratified squamous epithelium,
+ in particular proposing a definite hierarchy of differentiation and parameters
+ of progenitor turnover.
+ The methodology allowed us to compare the difference between normal and
+ drug-stressed tissue.
+\end_layout
+
+\begin_layout Standard
+Chapter 3 is a mostly theoretical diversion into some non-universal properties
+ of branching processes where the number of cells increase.
+ This is a model of cancer, and was indeed inspired by some 
+\emph on
+in vitro
+\emph default
+ work by the Jones group.
+ In particular, since tumour cells in culture appear completely homogeneous
+ and cell division is naturally constrained to be two daughter cells, the
+ theory predicts that the non-universal limiting clone size distribution
+ is determined by the cell cycle length.
+ Thus one might hope that by measuring that distribution, it would be possible
+ to infer the cell cycle length, and perhaps see evidence of failed attempts
+ to differentiate, followed by a brief quiescence and then falling back
+ into cell cycle again --- leading to a multi-model cycle distribution.
+\end_layout
+
+\begin_layout Standard
+Chapter 4 looks at some 
+\emph on
+in vitro
+\emph default
+ observations of rat retinal progenitors in collaboration with the Cayouette
+ group.
+ We found that even outside of homoeostatic/equilibrium environment, a purely
+ stochastic model of progenitors is able to explain observed clones.
+\end_layout
+
+\begin_layout Standard
+Chapter 5 is a continuation of retina in development, with the Harris group.
+ The availability of 
+\emph on
+in vivo
+\emph default
+ clones of developing embryos provided a rich but challenging dataset.
+ Whilst a stochastic model seems capable of explaining the gross size and
+ composition of clones, it is necessary more descriptive than prescriptive.
+ 
+\end_layout
+
+\begin_layout Chapter
+Stochastic Progenitors in Oesophageal Epithelium
+\end_layout
+
+\begin_layout Section
+Background and motivation
+\end_layout
+
+\begin_layout Standard
+Previous collaboration between the Jones group and AMK and BDS 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Clayton2007,Klein2007,Doupe2010"
+
+\end_inset
+
+ focused on interfollicular epidermis (IFE) in mice.
+ The IFE is a simple tissue, composed of multiple layers of keratinocytes,
+ sitting atop a membrane that separates it from the rest of the muscle and
+ mucosa that forms a substrate.
+ Proliferation is confined to the basal layer of cells; upon differentiation,
+ the cells stratify from the basal layer, lose their nucleus and much cellular
+ machinery to turn into large, flat cells which are no longer transcriptionally
+ active.
+ As such, it is suited as a clean environment in which to dissect the functional
+ behaviour of cells with regards to their fate choice, via lineage tracing
+ by inducible genetic labelling techniques.
+ Specifically, they used genetically modified mice which carry an fluorescent
+ protein gene, muted by a stop-cassette; upon treatment with tamoxifen the
+ gene is activated by deletion of the stop cassette, leading to the production
+ of the dye in that cell and all its progeny.
  By using a very low does of tamoxifen, it is possible to reduce the rate
- of induction such that EYFP-positive cells are widely spaced, and thus
- at some later time each cluster of EYFP-positive progeny (clonal cluster,
- or clone) can be assumed to have come from a single progenitor (
+ of induction such that fluorescent cells are widely spaced, and thus at
+ some later time each cluster of fluorescent progeny (henceforth referred
+ to as clonal cluster, or clone) can be assumed to have come from a single
+ progenitor.
+ It is then possible to measure by counting the distribution of clone sizes.
+ Their work demonstrated the existence of a fast-turnover, equipotent population
+ of progenitors which is capable of maintaining the tissue.
+ This was in direct contrast to textbook models of long-lived stem cells
+ supporting columns of more differentiated cells, via a hierarchy of transit-amp
+lifying cells, capped by large plates of terminally differentiated cells.
+ In particular, the evidence rests on: visual observation of large, single-cell
+ derived clones with rough boundaries
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+One might even speculate that the boundary should have a fractal dimension
+ higher than 1, as expected from a voter-model universality class.
+\end_layout
+
+\end_inset
+
+ which do not respect the boundaries of the top-level, fully keratinasized
+ cells; and linear growth of average surviving clone size, even at 6 months
+ or more.
+ These 
+\begin_inset Quotes eld
+\end_inset
+
+stylized
+\begin_inset Quotes erd
+\end_inset
+
+ facts emphatically disagree with the textbook model of transit amplification
+ stages.
+ Whilst it would be neat to believe that these newly identified progenitors
+ are the totality of proliferating cells in stratified epithelium in general,
+ discussion of this interpretation informally yielded some objections:
+\end_layout
+
+\begin_layout Itemize
+Whilst the IFE is interesting, everyone knows that there exist long-lived
+ stem cells at the base of the hair follicles themselves.
+ In addition, there are experiments which show that single cell clones derived
+ from these stem cells can extend to beyond the follicle, into the IFE.
+\end_layout
+
+\begin_layout Itemize
+The experiments thus far do not exclude the possibility that there is a
+ small population of quiescent/long-lived stem cells in the IFE, which do
+ not show up in the data through a combined effect of statistics and experimenta
+l methodology that do not label these cells.
+ Presumably, outside of routine maintenance such as wound repair, these
+ stem cells would activate and contribute to the excess tissue formation
+ needed.
+\end_layout
+
+\begin_layout Standard
+To answer these objections, we set out to perform a more in-depth analysis
+ of a homologous system in the oesophageal lining of adult mice.
+ In particular, whilst the oesophageal epidermis is very similar to IFE
+ in its structure, it lacks any gross anatomical features such as hair follicles
+, instead being composed of an spatially and temporally homogeneous population
+ of keratinocytes undergoing continuous division and loss.
+ This way, we hope to bypass the issue of follicular stem cells by simply
+ not having them.
+ We set up a similar system of transgenic animals, with tamoxifen activated
+ Enhanced Yellow Fluorescent Protein (EYFP) for clonal labelling (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:oes-pictures"
@@ -192,15 +688,16 @@ reference "fig:oes-pictures"
 \end_inset
 
 ).
- It is then possible to measure by counting the distribution of clone sizes,
- both as a univariate distribution in basal cell count (
+ In addition, we aimed to characterise the progenitor population further,
+ by measuring the distribution of clone sizes not only as a univariate distribut
+ion in basal cell count (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:oes-basal-raw"
 
 \end_inset
 
-), or a two-dimensionally joint distribution in basal and suprabasal cell
+), but also as a two-dimensional joint distribution of basal and suprabasal
  counts (
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -208,7 +705,12 @@ reference "fig:oes-joint-data"
 
 \end_inset
 
-).
+); the details of this will be the main thrust of this chapter of the present
+ work.
+ We also challenged this methodology by quantitatively characterising the
+ action of a drug (all-trans retinoic acid, or atRA) on the oesophageal
+ epithelium.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -239,8 +741,8 @@ name "fig:oes-pictures"
 
 \end_inset
 
-Protocol: Clonal labeling was induced in genetically engineered mice and
- analyzed at intervals from 3 days to 1 year (triangles).
+Protocol: Clonal labelling was induced in genetically engineered mice and
+ analysed at intervals from 3 days to 1 year (triangles).
  Images are rendered confocal z stacks of the basal layer showing typical
  clones at times indicated.
  Enhanced yellow fluorescent protein (EYFP), yellow; DAPI, blue.
@@ -266,41 +768,67 @@ m.
 \end_layout
 
 \begin_layout Standard
-In the work of [Clayton and Doupé], such techniques were used to show that
- the textbook [cite?] model of epithelial proliferative units supported
- by a single long-lived, asymmetrically dividing stem cell is at odds with
- the observed basal clone size distribution, and that a stochastic model
- of progenitors dividing both symmetrically and asymmetrically is capable
- of reproducing the experimental data.
- We will engage in a similar analysis, and go further by establishing a
- quantitative framework that allows precision measurement of relevant quantities
- such as rate of turnover and proportions of progenitor fate choice.
- We then use the method to analyse the action of a drug (all-
-\emph on
-trans
-\emph default
- retinoic acid) by quantitatively describing its action on the fate outcome
- of the progenitors.
+At the same time, we tried to address the issue of slow cycling cells in
+ the oesophageal epidermis by a pulse-chase system of transgenic Doxycycline
+ (DOX) induced Histone-2B enhanced green fluorescent protein (H2B-GFP).
+ In this system, whilst DOX is given to the animal, cycling cells produce
+ H2B-GFP, giving intense nuclear staining.
+ Up withdrawal, the H2B-GFP is diluted only by cell division, thus after
+ several typical cell cycles one would see very little high intensity H2B-GFP.
+ Indeed, after 8 weeks, there were 561 label-retaining cells out of 140000
+ basal cells, of which exactly zero expressed any keratinocyte marker.
+ Quantitative measurements of dilution rate gave a rough estimate of cell
+ cycle length of twice per week; as we shall see, this is what a purely
+ clonal analysis also yields, but with higher accuracy.
 \end_layout
 
 \begin_layout Standard
-Of great biological significance, but relatively independent of the analysis
- of clone size distributions, is the discovery that there are no long-lived
- slow-cycling stem cells in the EE at all.
- As such, the progenitors which we analyse in detail are also capable of
- repair, by switching to a different pattern of behaviour.
- The reader interested in these issues may find a discussion in [Doupe 2012].
+Furthermore, the Jones group was able to develop a remarkable microendoscopic
+ biopsy of mouse oesophagus, allowing 
+\emph on
+in vivo
+\emph default
+ observation of both tamoxifen-EYFP and DOX-H2B-GFP transgenics undergoing
+ wound repair.
+ By wounding already induced tamoxifen-EYPF transgenics, we could see the
+ existence of clones which were elongated and fragmented towards the wound,
+ indicating that the same cells which normally maintain the epithelium are
+ responsible for wound repair.
+ The DOX-H2B-GFP transgenics revealed that the excess dilution was even
+ around the wound, indicating widespread recruitment, as opposed to some
+ special sub-population of progenitors hitherto unexamined.
+ Finally, pulse-chase systems with the proliferation marker EdU (5-ethynyl-2'-de
+oxyuridine) at various stages after wounding showed reduced proliferation
+ after the wound fully repairs, indicating that the progenitors revert back
+ to a homoeostatic phase.
+\end_layout
+
+\begin_layout Standard
+The reader interested in these issues may find the full discussion in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Doupe2012"
+
+\end_inset
+
+.
  This chapter draws significantly on that publication, especially the supplement
 ary therein; the experimental work was performed by DPD, MPA and AR, project
  planning by PHJ, thorough discussion with AMK, and data analysis by GZ
  and BDS.
- PHJ wrote the main text of Ref [cite], but section 2.2 is the authorship
- of BDS.
+ PHJ wrote the main text of Ref 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Doupe2012"
+
+\end_inset
+
+, but section 2.2 is also the authorship of BDS.
 \end_layout
 
 \begin_layout Standard
-We will set out in detail the experimental evidence in support of the esophageal
- progenitor (EP) cell model, how the parameters of this model are constrained
+We will set out in detail the experimental evidence in support of the oesophagea
+l progenitor (EP) cell model, how the parameters of this model are constrained
  by the experimental data, and how the model can be challenged experimentally
  by drug treatment.
  In section
@@ -426,15 +954,29 @@ reference "fig:oes-normal-model"
 \end_layout
 
 \begin_layout Standard
-To isolate and quantify the behavior of proliferating cells, we scored the
- number of basal cells in clones containing two or more cells (i.e.
- clones in which a proliferative cell was labeled at the start of the experiment
-) from 3 days to one year post-induction, by confocal imaging of esophageal
- wholemounts (fig).
- Previously, it has been shown that in a similar homeostatic stratified
+To isolate and quantify the behaviour of proliferating cells, we scored
+ the number of basal cells in clones containing two or more cells (i.e.
+ clones in which a proliferative cell was labelled at the start of the experimen
+t) from 3 days to one year post-induction, by confocal imaging of oesophageal
+ wholemounts (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:oes-pictures"
+
+\end_inset
+
+).
+ Previously, it has been shown that in a similar homoeostatic stratified
  squamous epithelium, interfollicular epidermis, a simple statistical characteri
 zation can be used to both establish the equipotency of a self-renewing
- cell population, and elucidate the pattern of cell fate (cite 18, 19).
+ cell population, and elucidate the pattern of cell fate 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Clayton2007,Doupe2010"
+
+\end_inset
+
+.
  In particular, if self-renewal involves the stochastic loss and replacement
  of such progenitors, clones derived from these cells will undergo a process
  of 
@@ -482,8 +1024,14 @@ name "fig:oes-basal-scaling"
 
 Cumulative clone size distribution shows convergence onto scaling behaviour
  at late times.
- The raw basal layer clone size distribution in (fig) is reproduced here
- as the cumulative clone size distribution, 
+ The raw basal layer clone size distribution in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:oes-basal-raw"
+
+\end_inset
+
+ is reproduced here as the cumulative clone size distribution, 
 \begin_inset Formula $C_{n}(t)$
 \end_inset
 
@@ -504,7 +1052,7 @@ Cumulative clone size distribution shows convergence onto scaling behaviour
 .
  At times of 3 months or more post-induction, the data sets converge onto
  each other, a manifestation of long-term scaling behaviour.
- Combined with the observed homeostatic nature of the turnover, such scaling
+ Combined with the observed homoeostatic nature of the turnover, such scaling
  behaviour shows that the self-renewing progenitor cells function as a functiona
 lly equivalent population.
  The black curve denotes an exponential cumulative clone size distribution;
@@ -541,7 +1089,7 @@ reference "fig:oes-basal-scaling"
  of individual cell divisions, i.e., in the course of turnover, some cells
  may undergo terminal division leading to loss while others may undergo
  symmetric duplication.
- Indeed, such behavior is consistent with the observed heterogeneity in
+ Indeed, such behaviour is consistent with the observed heterogeneity in
  the clonal composition at short times, which reveals that, soon after induction
 , all possible permutations of two-cell clones can be found (i.e.
  two basal cells, one basal and one suprabasal, and two suprabasal cells).
@@ -561,23 +1109,30 @@ Taken together, the results above suggest that, as in interfollicular epidermis,
  cell division can lead to all three possible fate outcomes; two daughters
  that go on to divide, two cells that exit cycle and then stratify out of
  the basal layer, or one daughter that goes on to divide and one that differenti
-ates (cite 18, 19).
+ates 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Clayton2007,Doupe2010"
+
+\end_inset
+
+.
  To assess the validity of this model, and to quantify the respective rates
  and probabilities, we must turn now to a more detailed analysis of the
  short-time data, prior to scaling, where signatures of the detailed dynamics
  can be elucidated.
  To prepare for this analysis, we must embed the progenitor cell dynamics
- into a parameterization that includes the stratification and loss of terminally
+ into a parametrisation that includes the stratification and loss of terminally
  differentiated cells.
 \end_layout
 
 \begin_layout Subsection
-Parameterizing EP dynamics
+Parametrising EP dynamics
 \end_layout
 
 \begin_layout Standard
 To be concrete, we will suppose that the basal layer comprises a single
- population of cycling esophageal progenitor cells (with proportion 
+ population of cycling oesophageal progenitor cells (with proportion 
 \begin_inset Formula $\rho$
 \end_inset
 
@@ -594,7 +1149,7 @@ To be concrete, we will suppose that the basal layer comprises a single
 \begin_inset Formula $\gamma$
 \end_inset
 
-, to achieve homeostasis, it follows that 
+, to achieve homoeostasis, it follows that 
 \begin_inset Formula $\lambda\rho=(1-\rho)\gamma$
 \end_inset
 
@@ -625,15 +1180,22 @@ To further specify the model, we must also define the distribution of cell
  be rapidly erased from the clonal record over the timecourse.
  In particular, we expect features due to potential synchrony to be lost
  within experimental error bars after ca.
- 1--2 rounds of division (cite 20).
+ 1--2 rounds of division 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2007"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Alongside the division and stratification rates, we must further specify
  the probabilities for the respective fate outcomes following division.
- Since both the labeled cell number and their composition is found to be
+ Since both the labelled cell number and their composition is found to be
  conserved over the time course, any process of cell division must be consistent
- with homeostatic turnover.
+ with homoeostatic turnover.
  Moreover, since, through scaling, EPs are seen to function as an equipotent
  cell population, we will therefore suppose that proliferation and differentiati
 on is finely balanced so that, with probability, 
@@ -663,8 +1225,15 @@ orientationally asymmetric
 
  divisions would again be impossible to resolve.
  Similarly, we will neglect apoptosis, which was found to be negligible
- in the basal layer (Fig.
- S4E).
+ in the basal layer 
+\begin_inset CommandInset citation
+LatexCommand citep
+after "Fig. S4E"
+key "Doupe2012"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -688,7 +1257,7 @@ In summary, the time-evolution of the basal layer population, along with
 \end_inset
 
 .
- To fully characterize the behavior of the 
+ To fully characterize the behaviour of the 
 \emph on
 total
 \emph default
@@ -775,16 +1344,23 @@ where
  are defined above.
  As discussed above, we suppose that EP cell fate follows a pattern of intrinsic
  or cell-autonomous regulation in which the fate outcome following division
- is uncorrelated with the behavior of neighboring cells.
- In previous studies, we have shown that, in the two-dimensional geometry
+ is uncorrelated with the behaviour of neighbouring cells.
+ In previous studies, it has been shown that, in the two-dimensional geometry
  pertinent to EE, the long-term clonal dynamics is largely insensitive to
- this choice (30).
+ this choice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2008"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 This completes the specification of the cellular dynamics as a generalized
  branching-type process.
- In principle, we could further refine the modeling scheme to include aspects
+ In principle, we could further refine the modelling scheme to include aspects
  of the spatial regulation.
  However, our aim here is to establish and challenge the simplest model
  which is consistent with the observed range of clonal fate data.
@@ -795,7 +1371,7 @@ s, we will make use of a Bayesian approach.
 \end_layout
 
 \begin_layout Section
-Clonal analysis: quantitative modeling
+Clonal analysis: quantitative modelling
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:quant"
@@ -822,7 +1398,7 @@ According to the EP cell paradigm, following induction, a differentiated
  Analysis of the branching process shows that, over time, neutral drift
  dynamics leads to a progressive (linear) increase in the average size of
  the surviving clones, while the surviving fraction falls proportionally
- such that the total density of labeled cells remains constant (
+ such that the total density of labelled cells remains constant (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:oes-basal-raw"
@@ -831,7 +1407,7 @@ reference "fig:oes-basal-raw"
 
 , inset middle left) (18).
  In this regime, the basal layer clone size distribution acquires a scaling
- behavior (
+ behaviour (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:oes-basal-scaling"
@@ -869,7 +1445,7 @@ footprint
 \end_layout
 
 \begin_layout Standard
-Although the long-term scaling behavior provides the means to extract the
+Although the long-term scaling behaviour provides the means to extract the
  characteristic timescale 
 \begin_inset Formula $\tau$
 \end_inset
@@ -914,8 +1490,7 @@ The data itself is acquired in the form of a set of frequencies
 \begin_inset Formula $t$
 \end_inset
 
-; an example is Fig.
- S6B.
+.
  The stochastic nature of our model will predict probabilities 
 \begin_inset Formula $p_{bn}(t)$
 \end_inset
@@ -959,7 +1534,7 @@ The data itself is acquired in the form of a set of frequencies
 , where the counts are small, we would have to employ complex methods such
  as ad-hoc binning or continuity corrections.
  As such, we have elected to use a more Bayesian approach, which allows
- us to analyze the experiment with no manipulation of the data.
+ us to analyse the experiment with no manipulation of the data.
 \end_layout
 
 \begin_layout Standard
@@ -972,9 +1547,9 @@ To fit the model to the range of experimental data, we implement a basic
 
  is described by the model is specified by the proportionality, 
 \begin_inset Formula 
-\begin{eqnarray*}
+\[
 P\left(\lambda,r,\rho|D\right)\propto P\left(D|\lambda,r,\rho\right)P\left(\lambda,r,\rho\right),
-\end{eqnarray*}
+\]
 
 \end_inset
 
@@ -1926,7 +2501,7 @@ reference "fig:oes-joint-data"
 
 \end_inset
 
-, the raw data and model fits for atRA under homeostatic conditions, at
+, the raw data and model fits for atRA under homoeostatic conditions, at
  3 and 6 weeks post-induction.
 \end_layout
 
@@ -1971,7 +2546,7 @@ reference "fig:oes-atra-jump"
  This departure can be easily understood as the effect of atRA treatment
  on cells which have already stratified and left the basal layer is more
  complex, and there may be some time-lag before the entire tissue changes
- to the new steady-state behavior.
+ to the new steady-state behaviour.
  Nevertheless, these results suggests that, as far as the basal layer is
  concerned, the application of atRA treatment can be well-approximated as
  an instantaneous change of the parameters of the EP cell dynamics.
@@ -2071,16 +2646,16 @@ Single cell clones
 
 \begin_layout Standard
 Finally, the development of the EP model relied upon the observation of
- long-term scaling behavior of the basal layer clone size distribution which
- suggested that tissue maintenance involves only a single equipotent progenitor
- cell population.
+ long-term scaling behaviour of the basal layer clone size distribution
+ which suggested that tissue maintenance involves only a single equipotent
+ progenitor cell population.
  However, by focusing on clones with a total size greater than one, we eliminate
 d the potential signature of a second very slow-cycling or quiescent cell
  population.
  Although the existence of such a population in EE was ruled out by the
  H2B-GFP assay, with the predictions of the EP model, we can do back and
  question whether the dynamics of the single-cell clones are consistent
- with the ansatz of the modeling scheme.
+ with the ansatz of the modelling scheme.
 \end_layout
 
 \begin_layout Standard
@@ -2088,15 +2663,21 @@ Since, for times in greatly in excess of the cell stratification time,
 \begin_inset Formula $1/\gamma$
 \end_inset
 
-, differentiated cells labeled at induction will have been lost from the
+, differentiated cells labelled at induction will have been lost from the
  basal layer, we can use the long-term evolution of the single-cell basal
  clones to challenge the predicted model dynamics.
- Once again, the results, shown in Fig.
- S13, reveal an excellent agreement between theory and experiment over the
- year long timecourse.
+ Once again, the results, shown in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:oes-single-cell"
+
+\end_inset
+
+, reveal an excellent agreement between theory and experiment over the year
+ long timecourse.
  In particular, we can conclude that the persistence of single-cell clones
  merely reflects the set of clones which, by chance, have expanded and the
- sister cells have been shed leaving behind a single labeled cell.
+ sister cells have been shed leaving behind a single labelled cell.
 \end_layout
 
 \begin_layout Standard
@@ -2127,8 +2708,14 @@ name "fig:oes-single-cell"
 
 There is a very slow decay of the relative frequency of clones consisting
  of a single basal cell.
- Nevertheless, this is well accounted for by the model (Fig.
- 2F).
+ Nevertheless, this is well accounted for by the model 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:oes-normal-model"
+
+\end_inset
+
+.
  Here we plot the observed relative frequency in orange, and in blue the
  model prediction (with 95% likelihood intervals arising from finite number
  of clones counted).
@@ -2448,7 +3035,7 @@ Klein inversion formula
 \emph default
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 The formula was independently, and to the knowledge of the author prior,
@@ -3998,7 +4585,7 @@ Cell cycle distributions that gives
 
 .
  As 
-\begin_inset Formula $k\rightarrow\infty$
+\begin_inset Formula $\beta\rightarrow\infty$
 \end_inset
 
  the distributions approach a Dirac delta distribution, with mean 
@@ -4306,21 +4893,41 @@ The central question of developmental biology is how do cells organise their
 C.
  elegans
 \emph default
- suggests that this does occur [cite]), or alternatively there is some complex
- emergent organisation which only manifests within the right environment
- (?? shows the importance of cell-cell interactions for spermatogenesis).
+ suggests that this does occur 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Sulston1977,Sulston1983"
+
+\end_inset
+
+), or alternatively there is some complex emergent organisation which only
+ manifests within the right environment (
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2010"
+
+\end_inset
+
+ shows the importance of cell-cell interactions for spermatogenesis).
  Here we study rat retinal progenitors from day 20 
 \emph on
 in vitro
 \emph default
 ; these cells are late in the developmental process, and nearing complete
- diffenentiation.
- Earlier work [Cayouette] had established that even under culture conditions
- retinal progenitors cells (RPCs) will generate the correct proportions
- of retinal cell types, even while each individual RPC generates a heterogeneous
- collection of cells; this raises the possibility that there is indeed a
- great deal of intrinsic pre-programming, but expressed as a stochastic
- procedure which averages over a population to give the correct outcome.
+ differentiation.
+ Earlier work 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cayouette2003"
+
+\end_inset
+
+ had established that even under culture conditions retinal progenitors
+ cells (RPCs) will generate the correct proportions of retinal cell types,
+ even while each individual RPC generates a heterogeneous collection of
+ cells; this raises the possibility that there is indeed a great deal of
+ intrinsic pre-programming, but expressed as a stochastic procedure which
+ averages over a population to give the correct outcome.
 \end_layout
 
 \begin_layout Standard
@@ -4329,11 +4936,17 @@ In this chapter, we focus on an experiment which tracks by time-lapse microscopy
  showing the exact time of divisions and fate outcomes.
  We show that even though the pattern of divisions seem very complex, there
  is a simple stochastic model which is consistent with the data.
- This draws heavily on the work in [cite]; experimental work was carried
- out by FLAFG, manuscript was written by MC, analysis by GZ and BDS, with
- discussions with WAH, FC and JAC.
+ This draws heavily on the work in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Gomes2010"
+
+\end_inset
+
+; experimental work was carried out by FLAFG, manuscript was written by
+ MC, analysis by GZ and BDS, with discussions with WAH, FC and JAC.
  In what follows we will elide the exact experimental procedures, and refer
- the reader to the published work [cite].
+ the reader to the published work.
 \end_layout
 
 \begin_layout Section
@@ -4354,7 +4967,7 @@ To study retinal lineages, we cultured E20 rat RPCs at clonal density and
 
 \begin_layout Standard
 From the 1491 RPCs, 1211 were recorded to have undergone a terminal division
- that generated two differentiating daughters, but were not further analyzed
+ that generated two differentiating daughters, but were not further analysed
  in terms of cell type composition.
  Of the remaining 280 RPCs that divided more than once, the lineage trees
  of 129 could be reconstructed (all reconstructed lineages leading to clones
@@ -4374,7 +4987,7 @@ reference "fig:rat-raw"
 In the successfully reconstructed lineages, there were 465 differentiated
  cells, three of which had an unidentified fate (0.6%), and in the remaining
  cells we found 341 RPh (73.8%), 59 Bi (12.8%), 49 Am (10.6%) and 13 Mu (2.8%).
- These proportions are similar to those obtained after labeling RPCs at
+ These proportions are similar to those obtained after labelling RPCs at
  postnatal day (P) 0 with retroviral vectors in the mouse retina (Turner
  et al., 1990).
 \end_layout
@@ -4449,7 +5062,7 @@ name "fig:rat-raw"
 \end_inset
 
 The full dataset of all 129 reconstructed lineages in this study.
- Different cell types are color-coded, as indicated.
+ Different cell types are colour-coded, as indicated.
 \end_layout
 
 \end_inset
@@ -4473,7 +5086,7 @@ Stochastic progenitors
 \begin_layout Standard
 Using the reconstructed lineage data, we first asked how E20 RPCs achieve
  the required balance between proliferation and differentiation.
- We analyzed the different modes of cell division observed in the overall
+ We analysed the different modes of cell division observed in the overall
  population.
  For the ensemble of clones with three or more cells, for which the lineage
  trees were fully reconstructed, the first division must inevitably involve
@@ -4497,7 +5110,7 @@ Using the reconstructed lineage data, we first asked how E20 RPCs achieve
  results indicate that differentiative (D/D) divisions, and to a lesser
  extent self- renewing (P/D) divisions, are the major source of neurogenesis
  and gliogenesis in the perinatal retina, at least in culture.
- Although these figures point unambiguously to the predominance of D/D and
+ Although these numbers point unambiguously to the predominance of D/D and
  P/D divisions at this stage of retinogenesis, they leave open the question
  of whether the balance of these division modes changes significantly over
  the timecourse of the experiment.
@@ -4819,7 +5432,7 @@ name "fig:rat-cycle-correlations"
 Left
 \series default
 : cell cycle times of daughter RPCs plotted against the cell cycle times
- of their mothers reveals no discernable correlation.
+ of their mothers reveals no discernible correlation.
  
 \series bold
 Right
@@ -5104,9 +5717,15 @@ in vitro
 \end_layout
 
 \begin_layout Standard
-This chapter draws significantly from [cite]; the experimental work was
- primary by JH, and ADA, the manuscript by WAH and data analysis by GZ and
- BDS and discussions with MC.
+This chapter draws significantly from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "He2012"
+
+\end_inset
+
+; the experimental work was primary by JH, and ADA, the manuscript by WAH
+ and data analysis by GZ and BDS and discussions with MC.
  However, we have elided detailed discussion of the experimental methods
  and their validation (which in itself was a year-long project for the experimen
 talists), and focus on the clonal analysis.
@@ -5193,9 +5812,15 @@ sal plane.
 \end_layout
 
 \begin_layout Standard
-From previous works (Hu and Easter, 1999; Neumann and Nuesslein-Volhard,
- 2000), it is known that a wave of differentiation progresses from central
- to peripheral and nasal to temporal around the retina.
+From previous works 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Hu1999,Neumann2000"
+
+\end_inset
+
+, it is known that a wave of differentiation progresses from central to
+ peripheral and nasal to temporal around the retina.
  Given the asymmetry observed early (24 hpf) in the retina (
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -5206,7 +5831,7 @@ reference "fig:zf-retina-anatomy"
 , right), it seems natural to ask if there is actually a wave of proliferation
  that proceeds the differentiation.
  To dissect this behaviour, we used a transgenic fish which labels proliferating
- RPCs with destablized Green Fluorescent Protein (GFP) to literally visualise
+ RPCs with destabilized Green Fluorescent Protein (GFP) to literally visualise
  the proliferation wave (
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -5215,7 +5840,7 @@ reference "fig:zf-fucci"
 \end_inset
 
 ).
- Counting the exact number of GFP-labelled cells in each half of saggital
+ Counting the exact number of GFP-labelled cells in each half of sagittal
  sections, we see that the behaviour of different locations only differ
  by their relative timing, whilst recapitulating (broadly) the same raise
  and fall of labelled cells.
@@ -5223,8 +5848,14 @@ reference "fig:zf-fucci"
  wave) the number of labelled cells is constant, implying that the progenitors
  are in a state of quiescence.
  This is consistent with previous results showing that between 15--24 hpf
- RPCs have extremely slow cell cycle times of about 40 hr on average (Li
- et al., 2000).
+ RPCs have extremely slow cell cycle times of about 40 hr on average 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Li2000"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -5444,7 +6075,7 @@ reference "fig:zf-clone-dists"
  is pre-programmed, then there would be almost no variance, as later progenitors
  would know if they belonged to a small or large clone.
  Thus, we see that progenitors are still stochastic, but with evolving probabili
-ties for chosing their fate.
+ties for choosing their fate.
 \end_layout
 
 \begin_layout Standard
@@ -5484,7 +6115,7 @@ Therefore, we will suppose that RPCs form a functionally equivalent, equipotent
  from 24 hpf to 72 hpf, we can deduce that each progenitor at 48 hpf must
  go on to produce, on average, three postmitotic cells.
  Thus, we may visualize a ‘‘typical’’ clone to consist of two rounds of
- symmetrical (PP-type) division, one round of asym- metrical (PD-type) division,
+ symmetrical (PP-type) division, one round of asymmetrical (PD-type) division,
  and one round of terminal (DD-type) division leading to the average 12-fold
  increase in average clone size over the time course.
 \end_layout
@@ -5503,7 +6134,7 @@ reference "fig:zf-model"
 
 ).
  For simplicity, we assume these changes to occur instantaneously, thus
- avoiding having to parameterize the change beyond just a single time.
+ avoiding having to parametrise the change beyond just a single time.
  In particular, since clones induced at 48 hpf involve very few three-cell
  clones, PD divisions must be suppressed at these later times.
  Thus, there must be at least two such changes, to start and then stop PD
@@ -5578,7 +6209,7 @@ Thus, to fully define the model, we only have to specify two time points
  model was implemented as a custom-written Monte Carlo simulation, which
  outputs probabilities for observing clones of different sizes.
  While a comparison of the measured clone size distribution to the model
- reveals a favorable fit to the experimental data (
+ reveals a favourable fit to the experimental data (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:zf-model-comparison"
@@ -5645,7 +6276,14 @@ reference "fig:zf-lineage-trees"
 ).
  Amazingly, almost all the features deduced from clonal can be observed,
  such as PP divisions following PD divisions, and the near synchronous sister
- divisions (fig).
+ divisions 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:zf-synchrony-and-histogenisis"
+
+\end_inset
+
+.
  An unexpected feature is a variation of cell cycle length depending on
  fate outcome; in particular, PP and PD divisions are narrowly distributed
  around a similar average of 7.5 ± 1.3 hr, but terminal DD-type divisions
@@ -5698,9 +6336,9 @@ Reconstructed lineage trees from progenitors at 24 hpf, imaged at 48 hpf.
  we cannot be certain.
  
 \series bold
-Lower
+Lower:
 \series default
-: Reconstructed lineage trees from 60 photoconverted progenitors at 32 hpf,
+ Reconstructed lineage trees from 60 photoconverted progenitors at 32 hpf,
  imaged at 72 hpf.
  The numbers across the top indicate the rough spatial location of the progenito
 r, nasal (1), middle (2) or temporal (3).
@@ -5717,16 +6355,86 @@ r, nasal (1), middle (2) or temporal (3).
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset Graphics
+	filename zf-synchrony.png
+	lyxscale 10
+	width 50text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename zf-histogenesis.png
+	lyxscale 10
+	width 50text%
+
+\end_inset
+
+
+\series default
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:zf-synchrony-and-histogenisis"
+
+\end_inset
+
+Left:
+\series default
+ The division time of sister RPCs (t1 and t2) within the time window of
+ 24 and 72 hpf, indicating the synchrony of sister divisions.
+ 
+\series bold
+Right:
+\series default
+ The histogenesis of retina cells of different types derived from the live-imagi
+ng data.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 The reconstructed lineage trees also offer an unprecedented view on how
  histogenesis occurs, i.e.
  how some cell types are born before others.
  At the population level, there is overlap leading to several cells types
- being generated at the same time (fig).
+ being generated at the same time 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:zf-synchrony-and-histogenisis"
+
+\end_inset
+
+.
  We seek here to distinguish between simple overlap of strictly defined
  ordering within each lineage, and where ordering is loosely defined within
  individual lineage trees.
  We find that in DD divisions, almost all possible pairs of cell types occur
- (fig).
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:zf-lineage-trees"
+
+\end_inset
+
+.
  This eliminates the possibility of stereotypical succession of cell types,
  however, it does not satisfactorily explain the observed histogenesis.
  To attempt an answer, we performed a qualitative analysis of the available
@@ -5862,21 +6570,97 @@ In summary, based on clonal analysis, we constructed a model for zebrafish
  Although the model explains the fate choice of progenitors and the clone
  sizes observed, it does not satisfactorily explain the cell type choice
  and observed histogenesis.
- The publish work [cite] includes a further experiment dissecting a possible
- link between asymmetric divisions and production of ganglial cells, but
- the conclusions are somewhat preliminary.
+ The publish work 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "He2012"
+
+\end_inset
+
+ includes a further experiment dissecting a possible link between asymmetric
+ divisions and production of ganglial cells, but the conclusions are somewhat
+ preliminary.
  
 \end_layout
 
 \begin_layout Chapter
-Conclusion
+Conclusions and Further Work
+\end_layout
+
+\begin_layout Standard
+In this thesis, we have tried to demonstrate the role that quantitative
+ clonal lineage tracing may play in dissecting the underlying cell kinetics,
+ in both homoeostasis as well as highly non-equilibrium situations.
+ In general, we find that a model of stochastic cell behaviour is at least
+ consistent with experiments, and enjoy a relatively simple description.
+ In particular:
+\end_layout
+
+\begin_layout Itemize
+We extended the existing paradigm in epithelial tissue with quantitative
+ methods which allow precision measurements of cell cycle rate and, importantly,
+ branching ratios.
+ Importantly, the precision allows us to rule out certain forms of independence
+ between daughter cells.
+\end_layout
+
+\begin_layout Itemize
+We found that a stochastic model of fate choice is capable of describing
+ retinal neurons in development, both 
+\emph on
+in vitro
+\emph default
+ and in live embryos.
+ 
+\end_layout
+
+\begin_layout Itemize
+We extended theoretical understanding of supercritical, Markov branching
+ processes, specifically the link between cell cycle distributions and limit
+ distributions of clone sizes.
+ We find some bounds on theoretically allowed limit distributions and a
+ formula for potentially computing cell cycle distributions from measured
+ limited distributions.
+\end_layout
+
+\begin_layout Standard
+Differentiating between different microscopic/biochemical models is still
+ beyond the reach of the present work.
+ Nevertheless, we do not believe this to be a fundamental obstacle.
+ Whilst observations of universal behaviour (in the sense of statistical
+ mechanics) are the most reliable evidence of a model, it is the non-universal
+ deviations which allow fine dissection of the underlying mechanism.
+ The main obstacle seems to be one of gathering sufficient statistics for
+ the non-universal behaviour to be distinguishable from noise.
+ To that end, a major area of further work must be improvements in experimental
+ efficiency, as well as computational efficiency in mapping observed deviations
+ to concrete models.
+\end_layout
+
+\begin_layout Standard
+For instance, it may be possible to say something regarding potential cell-cell
+ interactions.
+ Throughout this work, we focused on models where cells are statistically
+ independent, apart from potential division synchrony between daughters
+ where noted.
+ One can imagine at least two biologically interesting ways in which this
+ assumption could be violated: daughter cells begin their lives in a closer
+ internal state than two arbitrary cells, which could lead to correlations
+ between nearby cells (over and above simply being in similar external environme
+nts), or nearby cells could actively inhibit each other via cell-cell signals.
+ It is known that in two dimensions, the latter belongs properly in a different
+ universality class than branching processes, but the corrections are only
+ logarithmic with time, which may be too close to a constant for biologically
+ accessible timescales.
+ It may be more possible to instead distinguish between these possibilities
+ with non-universal corrections.
 \end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-bibfiles "everything"
-options "apsrev4-1"
+bibfiles "/home/genneth/Documents/library"
+options "bibtotoc,abbrvnat"
 
 \end_inset
 
