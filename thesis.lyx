@@ -30,6 +30,7 @@ logicalmkup
 \output_sync_macro "\synctex=1"
 \bibtex_command default
 \index_command default
+\float_placement h
 \paperfontsize default
 \spacing onehalf
 \use_hyperref true
@@ -38,7 +39,7 @@ logicalmkup
 \pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 3
 \pdf_breaklinks false
-\pdf_pdfborder false
+\pdf_pdfborder true
 \pdf_colorlinks false
 \pdf_backref section
 \pdf_pdfusetitle true
@@ -2081,7 +2082,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename oes-F2.large.jpg
-	width 30text%
+	width 60text%
 
 \end_inset
 
@@ -2435,7 +2436,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename oes-F3.large.jpg
-	width 30text%
+	width 60text%
 
 \end_inset
 
@@ -3018,7 +3019,7 @@ e response from Ki67 as evidence of greater or lesser proliferation.
 \end_layout
 
 \begin_layout Chapter
-Theorems on Super-critical Branching Processes
+Theorems on 1-Type Super-critical Branching Processes
 \end_layout
 
 \begin_layout Section
@@ -3489,6 +3490,7 @@ reference "app:examples"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -3497,7 +3499,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /home/genneth/Documents/super-limit/gamma-set.pdf
-	width 50text%
+	width 75text%
 
 \end_inset
 
@@ -3658,22 +3660,27 @@ Notice however, that the local minimum in
 
 \begin_layout Standard
 \begin_inset Float figure
-placement t
-wide true
+placement H
+wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/genneth/Documents/super-limit/power-set-W.pdf
-	width 50text%
+	width 75text%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename /home/genneth/Documents/super-limit/power-set-log-W.pdf
-	width 50col%
+	width 75col%
 
 \end_inset
 
@@ -3691,17 +3698,17 @@ name "fig:g-power-limits"
 \end_inset
 
 Limit distributions for binary fission power-law tailed cell cycles.
- Left shows the divergence which occurs at 
+ Top shows the divergence which occurs at 
 \begin_inset Formula $W\rightarrow0$
 \end_inset
 
 .
- Right shows the distribution of 
+ Bottow shows the distribution of 
 \begin_inset Formula $\log(W)$
 \end_inset
 
 , which has power-law tails for large negative 
-\begin_inset Formula $\log W$
+\begin_inset Formula $\log(W)$
 \end_inset
 
  (inset).
@@ -4068,9 +4075,16 @@ As conjectured, the tail of
 \begin_inset Formula $H$
 \end_inset
 
- is always exponential.
- With the integral above we can consider the very general class of polynomial
- multiplied by an exponential.
+ is always exponential (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "app:moment-theorems"
+
+\end_inset
+
+).
+ With the integral above we can consider the very general class of some
+ polynomial multiplied by an exponential.
  For reasons that will become apparent, we write it as
 \begin_inset Formula 
 \[
@@ -4332,7 +4346,7 @@ reference "fig:H-gamma"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement t
+placement h
 wide false
 sideways false
 status open
@@ -4341,7 +4355,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /home/genneth/Documents/super-limit/gamma-inverse.pdf
-	width 50text%
+	width 75text%
 
 \end_inset
 
@@ -4595,7 +4609,7 @@ reference "fig:multi-modal"
 \end_inset
 
  shows, there exist well-behaved solutions for 
-\begin_inset Formula $r\apprle0.35$
+\begin_inset Formula $r\apprle0.36$
 \end_inset
 
 , which can be interestingly multi-modal.
@@ -4604,6 +4618,7 @@ reference "fig:multi-modal"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -4612,7 +4627,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /home/genneth/Documents/super-limit/multi-modal.pdf
-	width 50text%
+	width 75text%
 
 \end_inset
 
@@ -4632,19 +4647,19 @@ name "fig:multi-modal"
 Main figure shows the cell cycle distribution which gives the limit distribution
  in the inset.
  Blue is for 
-\begin_inset Formula $H(W)=\left[r+(1-r)z^{3}W^{3}\lambda^{4}/\Gamma(4)\right]e^{-\lambda W}$
+\begin_inset Formula $H(W)=\left[r\lambda+(1-r)W^{3}\lambda^{4}/6\right]e^{-\lambda W}$
 \end_inset
 
  where 
-\begin_inset Formula $\lambda$
+\begin_inset Formula $\lambda=4-3r$
 \end_inset
 
- is such that 
+, such that 
 \begin_inset Formula $\int W\, H(W)\, dW=1$
 \end_inset
 
- and 
-\begin_inset Formula $r=0.35$
+; we have shown specifically 
+\begin_inset Formula $r=0.36$
 \end_inset
 
 .
@@ -4661,7 +4676,7 @@ reference "eq:power-law-g"
 
 .
  For 
-\begin_inset Formula $r\apprge0.35$
+\begin_inset Formula $r\apprge0.36$
 \end_inset
 
  the dip in 
@@ -4699,15 +4714,411 @@ reference "eq:power-law-g"
 \end_layout
 
 \begin_layout Section
-Practical applications
+A practical application
 \end_layout
 
 \begin_layout Standard
--------------------------------------------------
+An interesting data set come from Ruth Verstraten (Jones group) involving
+ cultured human cervical cells infected by various strains of human papillomavir
+us (HPV).
+ We now analyse such a data set, where a particular strain (HPV16) has been
+ incorporated into the genetic material of the host, leading to sustained
+ proliferation in culture.
+ The data was generated from 301 such single-cell derived clones cultured
+ for 8 weeks; the largest of which are over 1000 cells, the smallest only
+ 4 cells.
+ Each clone was also stained for MCM2 (minichromosome maintenance complex
+ component 2) and EdU uptake over the last 24 hours, as an indication of
+ proliferation (our reservations regarding markers in general notwithstanding).
+ 
 \end_layout
 
 \begin_layout Standard
-Directly applying the Klein formula (
+A striking feature of the data is that most cells are cycling: 
+\begin_inset Formula $90.9\%$
+\end_inset
+
+ are MCM2-positive, and 
+\begin_inset Formula $87.4\%$
+\end_inset
+
+ are EdU-positive.
+ The smallest clone with positive staining for proliferation has only 7
+ cells, 5 of which are MCM2-positive, 3 are EdU-positive; the largest is
+ around 1250 cells, with 1184 MCM2-positive and 1178 EdU-positive.
+ Whilst we can perform analysis on only the MCM2-positive or EdU-positive
+ subpopulation to ensure that we are analysing only proliferating cells,
+ it is our belief that at these extremely high levels of proliferation,
+ the markers are not quantitatively accurate.
+ It seems to us to be more likely that 
+\emph on
+all
+\emph default
+ cells are cycling, but with very large variations in cell cycle length,
+ leading to the extremely broad distribution of clone sizes with marker-positive
+ cells.
+ In addition, if we believe that a potential mechanism is the failure of
+ cells to differentiate, when we may indeed expect some under-counting from
+ markers due to cells which are 
+\emph on
+trying
+\emph default
+ to differentiate and thereby not displaying the usual molecular signs of
+ cell cycle, but later on fall back into cycle again.
+ In any case, our analysis below does not substantially change with the
+ choice of subpopulation, and we will assume that all cells are cycling
+ and allow ourselves the full data set and avoid any experimental pathology
+ due to the extra complication.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename empirical-linear.pdf
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename empirical-log.pdf
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ruth-cumulative-distribution"
+
+\end_inset
+
+The complementary empirical cumulative distribution of clone sizes, from
+ 301 single-cell derived clones of human cervical epithelium with incorporated
+ HPV16.
+ The clones were stained for MCM2 upon fixing, and EdU for the last hour
+ before fixing.
+ The distributions are approximately linear with exponential tails (shown
+ above, guide for eye only).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Making the simplifying assumption that each cell is independent and clones
+ may be cultured indefinitely, we find ourselves considering a supercritical
+ branching process with only one type of equipotent cell, and no apoptosis.
+ Given the large average clone size (346 cells), we may consider ourselves
+ to be in the asymptotic regime of large times, and may apply our work so
+ far on limit distributions.
+ In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:ruth-cumulative-distribution"
+
+\end_inset
+
+ we see that as expected from general theorems on the distribution (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "app:moment-theorems"
+
+\end_inset
+
+) the tail is exponential, with the exception of very large clones (
+\begin_inset Formula $>1000\,\textrm{cells}$
+\end_inset
+
+) which are slight under-represented due to finite time effects.
+ We can also see that the small clones (
+\begin_inset Formula $<200\,\textrm{cells}$
+\end_inset
+
+) are 
+\emph on
+approximately
+\emph default
+ uniformly distributed (as evidenced by a linear segment in the empirical
+ cumulative distribution).
+ And whilst the number of clone relative is small to the average size, the
+ point-wise uniformity can be quite approximate indeed, nevertheless we
+ can be fairly certain that it is not the case that 
+\begin_inset Formula $H\left(0^{+}\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:multi-modal"
+
+\end_inset
+
+ we saw two examples of distributions which have the possibility of a large
+ number of small clones, one with heavy tailed 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ from the family defined in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:power-law-g"
+
+\end_inset
+
+, and one with exponential tailed 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ chosen to produce a similar limit distribution.
+ Figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ruth-fit-power"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ruth-fit-exponential"
+
+\end_inset
+
+ shows the fits to the data, using the power-law and exponential tailed
+ 
+\begin_inset Formula $g(t)$
+\end_inset
+
+, respectively.
+ Whilst the fits are quite good, we can also see that at the present level
+ of accuracy, we cannot distinguish between the two theoretical possibilities.
+ Indeed, a rough estimate based on the plausible intervals from the theoretical
+ curves suggest needing approximately 1000--2000 clones, which is impractical
+ given current methodologies.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename theoretical-power.pdf
+	scale 75
+	BoundingBox 0bp 230bp 595bp 842bp
+	clip
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ruth-fit-power"
+
+\end_inset
+
+Using a heavy-tailed 
+\begin_inset Formula $g(t)$
+\end_inset
+
+, specifically 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:power-law-g"
+
+\end_inset
+
+ with 
+\begin_inset Formula $n=2.1$
+\end_inset
+
+, we find a good fit with the empirical data.
+ The choice is motivated by the relative abundance of small clones, and
+ a need for a brief refractory period post-division.
+ We show the fit with linear and log scales (top and middle), with 
+\begin_inset Formula $95\%$
+\end_inset
+
+ plausible intervals in dashed lines.
+ Bottom shows the residue of the fit, showing no obvious systematic bias.
+ The fit to the extreme tail is not perfect, but understandable as arising
+ from finite time effects or experimental pathology due to difficulty of
+ sustaining such large clones.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename theoretical-exponential.pdf
+	scale 75
+	BoundingBox 0bp 230bp 595bp 842bp
+	clip
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ruth-fit-exponential"
+
+\end_inset
+
+Similar to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:ruth-fit-power"
+
+\end_inset
+
+, but using an exponential-tailed 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ inspired by 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:multi-modal"
+
+\end_inset
+
+.
+ Specifically, with 
+\begin_inset Formula $r=0.3$
+\end_inset
+
+.
+ We find an excellent fit, especially to the tail, but for reasons mentioned
+ in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:ruth-fit-power"
+
+\end_inset
+
+ we are sceptical about the relevance of the extreme tail, especially as
+ it comes at a slight cost to the goodness of fit to the middle section.
+ Nevertheless, given the data, it is not possible to distinguish between
+ the two possibilities.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also attempted to use 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:backward-eq"
+
+\end_inset
+
+ directly on the empirical distribution, some smoothed version or a guess
+ at a functional form.
+ But it seemed very difficult to construct a 
+\begin_inset Formula $H(W)$
+\end_inset
+
+ which leads to a valid 
+\begin_inset Formula $g(t)$
+\end_inset
+
+.
+ It seems that although we have derived some necessary conditions on acceptable
+ limit distributions, we are very far from having a precise account of the
+ sufficient conditions.
+\end_layout
+
+\begin_layout Section
+Conclusion and discussion
+\end_layout
+
+\begin_layout Standard
+We have made some progress on understanding the precise class of limit distribut
+ions which can arise from a 1-type supercritical branching process.
+ In particular, we have shown that the tail of the distribution must be
+ bounded from below by an exponential, and from above by any power-law;
+ we conjecture that it must be exponential.
+ We have also developed some numerical techniques which allow us to numerically
+ solve 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:forwards-eq"
+
+\end_inset
+
+, and found cell cycle distributions which lead to a limit distribution
+ that approximates a small data set from cultured HPV-incorporated cervical
+ epithelial cells.
+\end_layout
+
+\begin_layout Standard
+We have a formal formula for computing the cell cycle distribution from
+ a given limit distribution, thus solving the inverse problem.
+ Directly applying the formula (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "app:examples"
@@ -4717,8 +5128,8 @@ reference "app:examples"
 ), we can reproduce the known results for the exponential (Markovian) process,
  and the discrete time process.
  In addition, we can concretely invert the gamma distribution.
- However, more generally, although formally we can invert distributions
- of the form 
+ More generally, although we can formally invert distributions of the form
+ 
 \begin_inset Formula $H(W)=p(W)e^{-\lambda W}$
 \end_inset
 
@@ -4732,12 +5143,26 @@ reference "app:examples"
  the image of the forwards transforms, almost all directions (i.e.
  perturbations) lead off the manifold; but nevertheless, there is a countable
  number of perturbations which remain on it.
+ Clearly, it would be beneficial to have a more precise characterisation
+ of the manifold, and a ripe area for future theoretical work.
 \end_layout
 
 \begin_layout Standard
-Practically, for application to experimental data, the outlook is pessimistic
- for two reasons.
- One is that because the transform in equation 
+Currently however, the formula is not best suited for direct application
+ to experimental data.
+ Firstly, we do not have a full characterisation of the solution space of
+ 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:forwards-eq"
+
+\end_inset
+
+, making it difficult to project an empirical distribution into the allowed
+ manifold of solutions.
+ Secondly, we suspect that the inverse problem is likely to be ill-conditioned
+ (in some sense yet to be made precise) or possibly even ill-posed.
+ Heuristically, because the transform in equation 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:forwards-eq"
@@ -4756,54 +5181,198 @@ reference "eq:forwards-eq"
 \end_inset
 
 .
- Second is that although the transform is injective, meaning that it is
- invertible, it depends on having access to the limiting distribution.
- For interesting problems, such as 
-\begin_inset Formula $g$
+ The situation is likely analogous to the problem of inferring a distribution
+ from a finite sample, where in the absence of further constraints or strong
+ priors the problem is simply ill-posed.
+ It is possible that some global 
+\begin_inset Quotes eld
 \end_inset
 
- having power law tails, a real experiment necessarily will fail to probe
- the tail structure.
+shape constraint
+\begin_inset Quotes erd
+\end_inset
+
+ might be sufficient.
+ For instance, we might impose the restriction that conditional rate of
+ division is monotonically increasing as a function of cell lifetime; more
+ precisely, defining the survival function as
+\begin_inset Formula 
+\[
+S(t)=1-\int_{0}^{t}g(y)\, dy
+\]
+
+\end_inset
+
+and the hazard function 
 \end_layout
 
 \begin_layout Standard
-More generically (and realistically), we might have multi-type processes.
- There we encounter the problem that it would be necessary to have access
- to the limit distributions starting from all the different cell types,
- which may present a complete barrier to experiments.
- It is an open question however, about whether one can approximate a multi-type
- process with a single-type process, by appropriately choosing 
-\begin_inset Formula $f$
+\begin_inset Formula 
+\[
+H(t)=-\frac{S^{\prime}(t)}{S(t)}=\frac{g(t)}{S(t)},
+\]
+
 \end_inset
 
- and 
-\begin_inset Formula $g$
+we require that 
+\begin_inset Formula $H(t)$
+\end_inset
+
+ is a non-decreasing function of 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ We suspect that a suitable discretisation of this constraint to render
+ it finitary, with sufficient computation resources, could form the basis
+ of a viable numerical technique to infer plausible cell cycles from measurement
+s.
+ More general shape constraints such as requiring 
+\begin_inset Formula $g(t)$
+\end_inset
+
+ to be mono-modal or some fixed number of modes may also be viable.
+\end_layout
+
+\begin_layout Standard
+A more serious impediment may come from the restriction to 1-type branching
+ processes.
+ It is known 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Athreya2004"
+
+\end_inset
+
+ that in a multi-type, super-critical branching process, with 
+\begin_inset Formula $\mu$
+\end_inset
+
+ cell types, Malthusian parameter 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ , branching functions 
+\begin_inset Formula 
+\[
+f^{(i)}\left(s_{1},\ldots,s_{\mu}\right)=\sum_{k_{1},\ldots,k_{\mu}}a_{k_{1},\ldots k_{\mu}}^{(i)}s_{1}^{k_{1}}\cdots s_{\mu}^{k_{\mu}}
+\]
+
+\end_inset
+
+and lifetime functions 
+\begin_inset Formula $g^{(i)}(t)$
+\end_inset
+
+, will converge to a clone size distribution that depends on the type of
+ the initial cell, with a fixed ratio between different cell types (which
+ also depend on the initial cell type).
+ Specifically, letting 
+\begin_inset Formula $\phi^{(i)}(u)$
+\end_inset
+
+ be the characteristic function of the limit distribution starting from
+ a single cell of type 
+\begin_inset Formula $i$
+\end_inset
+
+, we have a system of coupled, non-linear integral equations:
+\begin_inset Formula 
+\begin{equation}
+\phi^{(i)}(u)=\int_{0}^{\infty}f^{(i)}\left[\phi^{(1)}\left(ue^{-\alpha y}\right),\ldots,\phi^{(\mu)}\left(ue^{-\alpha y}\right)\right]g^{(i)}(y)\, dy.\label{eq:horrible}
+\end{equation}
+
+\end_inset
+
+Whilst a similar formula to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "eq:backward-eq"
+
+\end_inset
+
+ must exist, it would require knowledge of all the limit distributions,
+ starting from different cell types.
+ From an experimental point of view, this may be too much information to
+ gather in the general case.
+ It may still be possible to make progress on specific branching patterns,
+ such as might be recapitulated by a failure to differentiate, e.g.
+ 
+\begin_inset Formula $A\rightarrow A+B$
+\end_inset
+
+, 
+\begin_inset Formula $B\rightarrow A$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-In conclusion, we find that as a practical procedure, the inversion formula
- (equation 
+We cannot resist mentioning that the above example also yields one of the
+ only known non-trivial solutions to 
 \begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:backward-eq"
+LatexCommand formatted
+reference "eq:horrible"
 
 \end_inset
 
-) is not practical for biological applications.
- Nevertheless, it is possible to use it to find some novel pairs of limiting
- distributions and cell cycle lengths, which would otherwise necessitate
- solving a non-linear integral equation (equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:forwards-eq"
+, due to John Biggins.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+
+\size normal
+\emph on
+Private communications.
+\end_layout
 
 \end_inset
 
-).
- 
+ Specifically, let 
+\begin_inset Formula $g^{A}(t)=2e^{-2t}$
+\end_inset
+
+ and 
+\begin_inset Formula $g^{B}(t)=e^{-t}$
+\end_inset
+
+.
+ The Malthusian parameter is 
+\begin_inset Formula $\alpha=1$
+\end_inset
+
+.
+ The characteristic functions are 
+\begin_inset Formula $\phi^{A}(u)=\frac{1}{\left(1+u\right)^{2}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi^{B}(u)=\frac{1}{1+u}$
+\end_inset
+
+, corresponding to 
+\begin_inset Formula $H^{A}(W)=We^{-W}$
+\end_inset
+
+ and 
+\begin_inset Formula $H^{B}(W)=e^{-W}$
+\end_inset
+
+.
+ No analytic generalisations of this solution is known.
+\end_layout
+
+\begin_layout Standard
+Finally, it is unclear at the moment whether it may be possible to approximate
+ a multi-type process as a 1-type process.
+ Whilst the general case is probably answerable in the negative, we are
+ more interested in cases such as above, where branching ratios are restricted
+ and, e.g., one cell type is essentially a waiting room for falling back into
+ cell cycle.
+ In particular, we might expect some combination of multi-modal cell lifetimes
+ to yield essentially the same limit distribution.
 \end_layout
 
 \begin_layout Section
