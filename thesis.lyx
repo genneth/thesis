@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass book
+\begin_preamble
+\usepackage[margin=1cm]{caption}
+\end_preamble
 \use_default_options true
 \begin_modules
 fix-cm
@@ -26,7 +29,7 @@ logicalmkup
 
 \graphics default
 \default_output_format pdf2
-\output_sync 1
+\output_sync 0
 \output_sync_macro "\synctex=1"
 \bibtex_command default
 \index_command default
@@ -612,9 +615,9 @@ key "Clayton2007,Klein2007,Doupe2010"
  the cells stratify from the basal layer, lose their nucleus and much cellular
  machinery to turn into large, flat cells which are no longer transcriptionally
  active.
- As such, it is suited as a clean environment in which to dissect the functional
- behaviour of cells with regards to their fate choice, via lineage tracing
- by inducible genetic labelling techniques.
+ As such, it is suited as a relatively clean environment in which to dissect
+ the functional behaviour of cells with regards to their fate choice, via
+ lineage tracing by inducible genetic labelling techniques.
  Specifically, they used genetically modified mice which carry an fluorescent
  protein gene, muted by a stop-cassette; upon treatment with tamoxifen the
  gene is activated by deletion of the stop cassette, leading to the production
@@ -783,7 +786,9 @@ At the same time, we tried to address the issue of slow cycling cells in
  Up withdrawal, the H2B-GFP is diluted only by cell division, thus after
  several typical cell cycles one would see very little high intensity H2B-GFP.
  Indeed, after 8 weeks, there were 561 label-retaining cells out of 140000
- basal cells, of which exactly zero expressed any keratinocyte marker.
+ basal cells, of which exactly zero expressed any keratinocyte marker ---
+ the label-retaining cells were of different lineages such as the immune
+ system.
  Quantitative measurements of dilution rate gave a rough estimate of cell
  cycle length of twice per week; as we shall see, this is what a purely
  clonal analysis also yields, but with higher accuracy.
@@ -803,7 +808,7 @@ in vivo
  responsible for wound repair.
  The DOX-H2B-GFP transgenics revealed that the excess dilution was even
  around the wound, indicating widespread recruitment, as opposed to some
- special sub-population of progenitors hitherto unexamined.
+ special sub-population of progenitors hitherto unidentified.
  Finally, pulse-chase systems with the proliferation marker EdU (5-ethynyl-2'-de
 oxyuridine) at various stages after wounding showed reduced proliferation
  after the wound fully repairs, indicating that the progenitors revert back
@@ -2805,7 +2810,8 @@ not
 An obvious extension of the present model is to incorporate some interaction
  effect between cells.
  As noted in the Introduction, such a model would naturally fall into the
- voter model universality class, which has a characteristic 
+ voter model universality class, which has the same exponential clone size
+ distribution, but with a characteristic 
 \begin_inset Formula $t/\log(t)$
 \end_inset
 
@@ -3033,7 +3039,8 @@ As mentioned in Chapter 1, there is a remarkable theorem that, in the long
 critical branching process
 \emph default
  (where each cell leave on average the exact same number of cells in the
- next generation), the scaled clone size distribution is exponential.
+ next generation), the scaled clone size distribution is exponential and
+ the average clone size conditioned on survival grows linearly with time.
  The statement makes no other assumptions, and is a prototypical example
  of universality.
  Observation of this universality was crucial, in epithelia, to strongly
@@ -3066,8 +3073,8 @@ super-critical process
 
 \begin_layout Standard
 From informal discussions with the Jones group regarding possible mechanisms
- of malregulation, various experiments circumstantially implicated a failure
- to differentiate as a crucial step.
+ of regulatory failure, various experiments circumstantially implicated
+ a failure to differentiate as a crucial step.
  Specifically, we expected to see progenitor cells 
 \begin_inset Quotes eld
 \end_inset
@@ -3208,7 +3215,7 @@ f^{\prime}(1)\int_{0}^{\infty}e^{-\alpha y}g(y)\, dy=1;
 
 \end_inset
 
-and in the limit of infinite time, the he distribution (normalised to unit
+and in the limit of infinite time, the distribution (normalised to unit
  mean) of the total number of cells converges to a distribution 
 \begin_inset Formula $H(W)$
 \end_inset
@@ -3320,7 +3327,11 @@ reference "eq:forwards-eq"
 
 \end_inset
 
- as a transform between 
+ as a non-linear integral transform on distributions over 
+\begin_inset Formula $\mathbb{R}^{+}$
+\end_inset
+
+, between 
 \begin_inset Formula $g(t)$
 \end_inset
 
@@ -3761,9 +3772,9 @@ which is simply a convolution.
 \emph on
 Klein inversion formula
 \emph default
-
+:
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The formula was independently, and to the knowledge of the author prior,
@@ -3776,7 +3787,7 @@ private correspondence
 
 \end_inset
 
-:
+
 \begin_inset Formula 
 \begin{equation}
 \tilde{g}(\omega)=\frac{\tilde{h}(\omega)}{\widetilde{f\odot h}(\omega)},\label{eq:backward-eq}
@@ -4817,6 +4828,9 @@ The complementary empirical cumulative distribution of clone sizes, from
  before fixing.
  The distributions are approximately linear with exponential tails (shown
  above, guide for eye only).
+ Note that the very large clones are under-represented relative to a perfect
+ exponential tail; this can be explained by the finite time extent of the
+ experiment.
 \end_layout
 
 \end_inset
@@ -6008,59 +6022,102 @@ Stochastic Fate Choice in Cultured Rat Retinal Progenitors
 \end_layout
 
 \begin_layout Section
-Chapter Overview
+Introduction and motivation
 \end_layout
 
 \begin_layout Standard
-The central question of developmental biology is how do cells organise their
- divisions to achieve the same body plan reproducibly.
- One could imagine that each cell is pre-programmed with the instructions
- (and classical lineage tracing experiments in 
+As we have seen, it is possible to have a stochastic process which describes
+ in quantitative detail a homoeostatic stratified epithelium such as the
+ oesophageal epithelium, or skin.
+ Such an approach has also seen success in other tissues which undergo continuou
+s replacement and renewal throughout adult life, such as in the sperm ducts
+ [???] and intestines [???].
+ However, the central nervous system (CNS) is fundamentally different, as
+ most neurons are not replaced during adult life.
+ Thus, we are dealing with a system which is not only not in homoeostasis,
+ it is also very far from equilibrium.
+\end_layout
+
+\begin_layout Standard
+Knowledge that a tissue is under homoeostasis significantly restricts the
+ possible behaviour of cells.
+ In particular, we have at our disposal 
 \emph on
-C.
- elegans
+universal
 \emph default
- suggests that this does occur 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Sulston1977,Sulston1983"
+ scaling relations about clone sizes and clone growth rates which anchor
+ our interpretation of experimental observations.
+ Given the confirmation of these universal properties, we are then almost
+ forced to conclude a simple, stochastic model of fate choice, with assurances
+ that deviations from this model are small and that they do not impact the
+ macroscopic behaviour.
+ Such models are therefore not only descriptive, but also predictive.
+\end_layout
 
-\end_inset
+\begin_layout Standard
+Relaxing homoeostasis to mere time-translation invariance allows for much
+ greater variety of behaviour.
+ For example, even without interaction, we have complex relations between
+ clone size distributions and cell cycle lengths.
+ With interactions, we can in principle have arbitrary reaction-diffusion
+ systems, which are known [???] to be Turing-complete, and are therefore
+ capable of simulating any other system.
+ As such, we cannot hope to quantitatively bound the errors that our assumptions
+ may induce, and any model we build could in principle be only valid within
+ the experimental bounds.
+\end_layout
 
-), or alternatively there is some complex emergent organisation which only
- manifests within the right environment (
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Klein2010"
-
-\end_inset
-
- shows the importance of cell-cell interactions for spermatogenesis).
- Here we study rat retinal progenitors from day 20 
+\begin_layout Standard
+Nevertheless, we can remain guided by arguments of simplicity and concordance:
+ although we cannot categorically rule out alternatives, the simplest thing
+ that seems to work is probably not too far from the truth.
+ More concretely, we can at least provide a 
 \emph on
-in vitro
+null hypothesis
 \emph default
-; these cells are late in the developmental process, and nearing complete
- differentiation.
- Earlier work 
+ on which to compare more complex models.
+ In particular, we have in mind the possibility that minor modifications
+ to the basic concept of stochastic, independent fate choice can recapitulate
+ observed behaviour, and form the basis of such a null hypothesis.
+\end_layout
+
+\begin_layout Standard
+The possibility that such a process could exist is given by 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cayouette2003"
 
 \end_inset
 
- had established that even under culture conditions retinal progenitors
- cells (RPCs) will generate the correct proportions of retinal cell types,
- even while each individual RPC generates a heterogeneous collection of
- cells; this raises the possibility that there is indeed a great deal of
- intrinsic pre-programming, but expressed as a stochastic procedure which
- averages over a population to give the correct outcome.
+, which showed that isolated cultured rat retinal progenitor cells (RPCs)
+ will generate the same proportions of differentiated retinal cell types
+ (both neuronal and ganglial) as 
+\emph on
+in vivo
+\emph default
+.
+ As isolated RPCs share little common extracellular influences, this suggests
+ that the regulation for the proliferation and differentiation of progenitors
+ are intrinsic.
+ However, at the same time, individual clones derived from RPCs are enormous
+ heterogeneous in size and composition 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Turner1987"
+
+\end_inset
+
+.
+ Just like in epithelium, we have the dual combination of individual heterogenei
+ty but tissue level regulation, seemingly without cell-cell interaction.
+ We are thus encouraged to seek a stochastic model of independent RPCs,
+ where individual fate choice is controlled by some fixed set of probabilities.
 \end_layout
 
 \begin_layout Standard
-In this chapter, we focus on an experiment which tracks by time-lapse microscopy
- cultured RPCs, from which detailed lineage trees may be reconstructed,
- showing the exact time of divisions and fate outcomes.
+We focus on an experiment which tracks by time-lapse microscopy cultured
+ RPCs from day 20 embryos, from which detailed lineage trees may be reconstructe
+d showing the exact time of divisions and fate outcomes.
  We show that even though the pattern of divisions seem very complex, there
  is a simple stochastic model which is consistent with the data.
  This draws heavily on the work in 
@@ -6098,10 +6155,24 @@ From the 1491 RPCs, 1211 were recorded to have undergone a terminal division
  in terms of cell type composition.
  Of the remaining 280 RPCs that divided more than once, the lineage trees
  of 129 could be reconstructed (all reconstructed lineages leading to clones
- of three or more cells are shown in 
+ of three or more cells are shown in figures 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "fig:rat-raw"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rat-raw-1"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:rat-raw-2"
 
 \end_inset
 
@@ -6113,10 +6184,17 @@ reference "fig:rat-raw"
 \begin_layout Standard
 In the successfully reconstructed lineages, there were 465 differentiated
  cells, three of which had an unidentified fate (0.6%), and in the remaining
- cells we found 341 RPh (73.8%), 59 Bi (12.8%), 49 Am (10.6%) and 13 Mu (2.8%).
+ cells we found 341 photoreptors (RPh, 73.8%), 59 bipolar cells (Bi, 12.8%),
+ 49 amacrine cells, (Am, 10.6%) and 13 Müller cells (Mu, 2.8%).
  These proportions are similar to those obtained after labelling RPCs at
- postnatal day (P) 0 with retroviral vectors in the mouse retina (Turner
- et al., 1990).
+ postnatal day (P) 0 with retroviral vectors in the mouse retina 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Turner1990"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -6129,49 +6207,27 @@ We note that the reconstructed lineages vary widely in size and composition,
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename retinalLineageData1.pdf
-	width 50col%
+	lyxscale 30
+	width 100col%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Graphics
 	filename retinalLineageData2.pdf
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Graphics
-	filename retinalLineageData3.pdf
-	width 50col%
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename retinalLineageData4.pdf
-	width 50col%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename retinalLineageData5.pdf
-	width 50col%
+	lyxscale 30
+	width 100col%
 
 \end_inset
 
@@ -6188,7 +6244,7 @@ name "fig:rat-raw"
 
 \end_inset
 
-The full dataset of all 129 reconstructed lineages in this study.
+Part 1 of the full dataset of all 129 reconstructed lineages in this study.
  Different cell types are colour-coded, as indicated.
 \end_layout
 
@@ -6198,6 +6254,102 @@ The full dataset of all 129 reconstructed lineages in this study.
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename retinalLineageData3.pdf
+	lyxscale 30
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename retinalLineageData4.pdf
+	lyxscale 30
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rat-raw-1"
+
+\end_inset
+
+Part 2 of the full dataset of all 129 reconstructed lineages in this study.
+ Different cell types are colour-coded, as indicated.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename retinalLineageData5.pdf
+	lyxscale 30
+	width 100col%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rat-raw-2"
+
+\end_inset
+
+Part 3 of the full dataset of all 129 reconstructed lineages in this study.
+ Different cell types are colour-coded, as indicated.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -6235,7 +6387,7 @@ Using the reconstructed lineage data, we first asked how E20 RPCs achieve
 ).
  Since the P/P mode of division accounts for only a small fraction, these
  results indicate that differentiative (D/D) divisions, and to a lesser
- extent self- renewing (P/D) divisions, are the major source of neurogenesis
+ extent self-renewing (P/D) divisions, are the major source of neurogenesis
  and gliogenesis in the perinatal retina, at least in culture.
  Although these numbers point unambiguously to the predominance of D/D and
  P/D divisions at this stage of retinogenesis, they leave open the question
@@ -6373,8 +6525,14 @@ These results suggest that, at least from E20 and over the timecourse of
 \emph on
 ex vivo
 \emph default
- in retinal explants (Cayouette et al., 2003) suggest that this is not a
- pathology associated with culture conditions.
+ in retinal explants 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Cayouette2003"
+
+\end_inset
+
+ suggest that this is not a pathology associated with culture conditions.
  In addition, because the RPCs are cultured at clonal density, these results
  suggest that biased probabilities do not depend on specific environmental
  cues.
@@ -6398,28 +6556,34 @@ reference "fig:rat-cycle-fate-and-dist"
 
 \end_inset
 
-, left), indicating that cell cycle time does not correlate with any particular
+, top), indicating that cell cycle time does not correlate with any particular
  cell fate decision.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename cycleLengthvsFate.pdf
-	width 50col%
+	width 70col%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename cycleLengthHist.pdf
-	width 50col%
+	width 75col%
 
 \end_inset
 
@@ -6438,14 +6602,14 @@ name "fig:rat-cycle-fate-and-dist"
 
 
 \series bold
-Left
+Top
 \series default
 : average cell cycle time (mean + population s.d.) of RPCs generating all
  the different combinations of daughter cell pairs observed in this study.
  A, amacrine; B, bipolar; M, Müller; P, progenitor cell; R, rod photoreceptor.
  
 \series bold
-Right
+Bottom
 \series default
 : observed cell cycle time distribution (bars) together with a log-normal
  fit (line).
@@ -6523,21 +6687,27 @@ reference "fig:rat-cycle-correlations"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename divisionSynchrony.pdf
-	width 50col%
+	width 70col%
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename finishTimesHist.pdf
-	width 50col%
+	width 70col%
 
 \end_inset
 
@@ -6556,13 +6726,13 @@ name "fig:rat-cycle-correlations"
 
 
 \series bold
-Left
+Top
 \series default
 : cell cycle times of daughter RPCs plotted against the cell cycle times
  of their mothers reveals no discernible correlation.
  
 \series bold
-Right
+Bottom
 \series default
 : The data (bars) show the measured distribution of lineage termination
  times.
@@ -6717,7 +6887,7 @@ reference "fig:rat-clone-size"
  the RPh cell fate.
  Out of the 201 entries, from the table, we find that such an event occurred
  24 times.
- This compares to the 19.4 average predicted by the stochastic model.
+ This compares well to the 19.4 average predicted by the stochastic model.
  From the subscripted number, we see that one would expect to see a departure
  from the theoretical prediction of this magnitude or larger in one out
  of four experiments owing to statistical fluctuations, i.e.
