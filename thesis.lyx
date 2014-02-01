@@ -35,7 +35,7 @@ logicalmkup
 \index_command default
 \float_placement H
 \paperfontsize default
-\spacing onehalf
+\spacing double
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
@@ -223,6 +223,14 @@ Finally, I would like to thank my wife Karen for providing loving and forceful
 \begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
 
 \end_inset
 
@@ -3023,83 +3031,6 @@ e response from Ki67 as evidence of greater or lesser proliferation.
  The Jones group is continuing this line of investigation, and trying to
  find more robust candidates for detecting proliferation, using the parameters
  derived in this work as the baseline for comparison.
-\end_layout
-
-\begin_layout Subsection
-Postscript
-\end_layout
-
-\begin_layout Standard
-Due to personal circumstances, there was an unusually long hiatus between
- the last work done for this thesis and its eventual submission.
- We are therefore in an unusually advantaged state to be able to review
- some of the work which has occurred 
-\emph on
-after
-\emph default
- the publication herein, and discuss a little about where the field has
- gone since.
-\end_layout
-
-\begin_layout Standard
-Concurrently to 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Doupe2012"
-
-\end_inset
-
-, the group of Cédric Blanpain carried out analogous work on mouse IFE 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Mascre2012"
-
-\end_inset
-
-, with genetically induced labelling, label retention studies with H2B-GFP
- and clonal studies under homoeostasis and wounding.
- They find two types of cells capable of self-renewal, which in homoeostasis
- have vastly different typical cell cycles (4--6 times per year versus once
- per week), and which can be differentially labelled via K14 and involucrin
- promoters respectively; these behaviours were quantified in exactly analogous
- methods via both clone size distributions (joint in basal and suprabasal
- counts) and label retention studies.
- Furthermore, following wounding the slow cycling population was found to
- be dominant in repair, displaying characteristic elongated clones with
- basal attachment several weeks post-wounding.
- Whilst strikingly similar in detail to the observations in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Doupe2012"
-
-\end_inset
-
-, the overall conclusion of the existence of a 
-\begin_inset Quotes eld
-\end_inset
-
-reserve
-\begin_inset Quotes erd
-\end_inset
-
- slow-cycling population which mobilises for repair is totally distinct.
- It would seem that two similar tissues really can be maintained by different
- homoeostatic mechanisms, in utter defiance of Occam's razor.
- In our opinion, this sharpens the need to understand what, if any, reasons
- exist for these differences, both biochemically but also from a theoretical
- population dynamics perspective --- do these distinct patterns of renewal
- confer advantages in different kinds of wounding, typical of the anatomical
- environment? A later study 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "Teixeira2013"
-
-\end_inset
-
- of human oesophageal epithelium concluded that a single progenitor population
- was sufficient to explain their observations, but in the absence of totally
- controlled label retention studies, it is hard to completely rule out the
- co-existence of a population of slow cycling stem cells.
 \end_layout
 
 \begin_layout Chapter
@@ -8540,6 +8471,170 @@ However, the primary driving force behind many of the works in this thesis
  method into service.
  As such, future work will likely be dominated by the need to understand
  and refine the experimental procedures which generate novel types of data.
+\end_layout
+
+\begin_layout Section
+Postscript
+\end_layout
+
+\begin_layout Standard
+Due to personal circumstances, there was an unusually long hiatus between
+ the last work done for this thesis and its eventual submission.
+ We are therefore in an unusually advantaged state to be able to review
+ some of the work which has occurred 
+\emph on
+after
+\emph default
+ the publication herein, and discuss a little about where the field has
+ gone since.
+\end_layout
+
+\begin_layout Standard
+Concurrently to 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Doupe2012"
+
+\end_inset
+
+, the group of Cédric Blanpain carried out analogous work on mouse IFE 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Mascre2012"
+
+\end_inset
+
+, with genetically induced labelling, label retention studies with H2B-GFP
+ and clonal studies under homoeostasis and wounding.
+ They find two types of cells capable of self-renewal, which in homoeostasis
+ have vastly different typical cell cycles (4--6 times per year versus once
+ per week), and which can be differentially labelled via K14 and involucrin
+ promoters respectively; these behaviours were quantified in exactly analogous
+ methods via both clone size distributions (joint in basal and suprabasal
+ counts) and label retention studies.
+ Furthermore, following wounding the slow cycling population was found to
+ be dominant in repair, displaying characteristic elongated clones with
+ basal attcdachment several weeks post-wounding.
+ Whilst strikingly similar in detail to the observations in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Doupe2012"
+
+\end_inset
+
+, the overall conclusion of the existence of a 
+\begin_inset Quotes eld
+\end_inset
+
+reserve
+\begin_inset Quotes erd
+\end_inset
+
+ slow-cycling population which mobilises for repair is totally distinct.
+ It would seem that two similar tissues really can be maintained by different
+ homoeostatic mechanisms, in utter defiance of Occam's razor.
+ In our opinion, this sharpens the need to understand what, if any, reasons
+ exist for these differences, both biochemically but also from a theoretical
+ population dynamics perspective --- do these distinct patterns of renewal
+ confer advantages in different kinds of wounding, typical of the anatomical
+ environment? A later study 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Teixeira2013"
+
+\end_inset
+
+ of human oesophageal epithelium concluded that a single progenitor population
+ was sufficient to explain their observations, but in the absence of totally
+ controlled label retention studies, it is hard to completely rule out the
+ co-existence of a population of slow cycling stem cells.
+\end_layout
+
+\begin_layout Standard
+There now also exist a large body of work using similar genetically induced
+ labelling and quantitative clonal analysis in other tissues:
+\end_layout
+
+\begin_layout Itemize
+In intestinal crypts, there has been a long standing question of what exactly
+ is the proliferation hierarchy.
+ Clonal labelling techniques 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lopez-Garcia2010"
+
+\end_inset
+
+ suggest that there is an equipotent population of progenitors which undergo
+ stochastic renewal and differentiation, constrained to preserving the populatio
+n number by homoeostasis.
+ However, because of the one-dimensional nature of the anatomical niche
+ that they occupy (distributed in a ring), the scaling dynamics is different
+ from oesophagus and recapitulates the expected 
+\begin_inset Formula $\sqrt{t}$
+\end_inset
+
+ growth of average clone size instead.
+ However, it does also appear that there exist measurable states of the
+ progenitors which influences the likelihood of division 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Snippert2010"
+
+\end_inset
+
+, tied to the expression of Lgr5.
+ It remains unclear to what extent the states are truly distinct, or if
+ cells are constantly changing their internal states on a timescale far
+ smaller than a typical cell cycle, and the observed expression levels are
+ merely correlated with this internal chaotic motion.
+ The Clevers group has also used clonal analysis to quantitatively analyses
+ the breakdown of homoeostasis in tumour formation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Snippert2014"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Another one-dimensional tissue with critical branching is found in spermatogenes
+is 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2010"
+
+\end_inset
+
+.
+ The square-root scaling of average clone size with time is again present,
+ but the functional form of the scaling distribution is distinct due to
+ the production occurring on a line rather than a circle.
+\end_layout
+
+\begin_layout Itemize
+The Blanpain group has also studied 
+\emph on
+in vivo
+\emph default
+ the growth of skin tumours in mice 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Driessens2012"
+
+\end_inset
+
+, building on the work on understanding the normal sources of renewal in
+ homoeostasis.
+ They find strong evidence in support of the idea of a 
+\emph on
+cancer stem cell
+\emph default
+, a single point of defect which results in malregulated proliferation,
+ leading to a tumour.
+ 
 \end_layout
 
 \begin_layout Standard
