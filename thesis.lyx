@@ -217,7 +217,7 @@ y space and personal time for several hours a week for the benefit of my
 
 \begin_layout Standard
 Finally, I would like to thank my wife Karen for providing loving and forceful
- motivation whenever needed.
+ motivation whenever needed, and my parents for all their love and support.
 \end_layout
 
 \begin_layout Standard
@@ -3025,8 +3025,89 @@ e response from Ki67 as evidence of greater or lesser proliferation.
  derived in this work as the baseline for comparison.
 \end_layout
 
+\begin_layout Subsection
+Postscript
+\end_layout
+
+\begin_layout Standard
+Due to personal circumstances, there was an unusually long hiatus between
+ the last work done for this thesis and its eventual submission.
+ We are therefore in an unusually advantaged state to be able to review
+ some of the work which has occurred 
+\emph on
+after
+\emph default
+ the publication herein, and discuss a little about where the field has
+ gone since.
+\end_layout
+
+\begin_layout Standard
+Concurrently to 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Doupe2012"
+
+\end_inset
+
+, the group of Cédric Blanpain carried out analogous work on mouse IFE 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Mascre2012"
+
+\end_inset
+
+, with genetically induced labelling, label retention studies with H2B-GFP
+ and clonal studies under homoeostasis and wounding.
+ They find two types of cells capable of self-renewal, which in homoeostasis
+ have vastly different typical cell cycles (4--6 times per year versus once
+ per week), and which can be differentially labelled via K14 and involucrin
+ promoters respectively; these behaviours were quantified in exactly analogous
+ methods via both clone size distributions (joint in basal and suprabasal
+ counts) and label retention studies.
+ Furthermore, following wounding the slow cycling population was found to
+ be dominant in repair, displaying characteristic elongated clones with
+ basal attachment several weeks post-wounding.
+ Whilst strikingly similar in detail to the observations in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Doupe2012"
+
+\end_inset
+
+, the overall conclusion of the existence of a 
+\begin_inset Quotes eld
+\end_inset
+
+reserve
+\begin_inset Quotes erd
+\end_inset
+
+ slow-cycling population which mobilises for repair is totally distinct.
+ It would seem that two similar tissues really can be maintained by different
+ homoeostatic mechanisms, in utter defiance of Occam's razor.
+ In our opinion, this sharpens the need to understand what, if any, reasons
+ exist for these differences, both biochemically but also from a theoretical
+ population dynamics perspective --- do these distinct patterns of renewal
+ confer advantages in different kinds of wounding, typical of the anatomical
+ environment? A later study 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "Teixeira2013"
+
+\end_inset
+
+ of human oesophageal epithelium concluded that a single progenitor population
+ was sufficient to explain their observations, but in the absence of totally
+ controlled label retention studies, it is hard to completely rule out the
+ co-existence of a population of slow cycling stem cells.
+\end_layout
+
 \begin_layout Chapter
-Theorems on 1-Type Super-critical Branching Processes
+Theorems on 1-Type Super-critical Branching Pro
+\end_layout
+
+\begin_layout Chapter
+cesses
 \end_layout
 
 \begin_layout Section
@@ -3353,8 +3434,8 @@ reference "eq:forwards-eq"
 \end_layout
 
 \begin_layout Standard
-This chapter was inspired by conversations with the Jones team, who provided
- the data for this theoretical detour.
+This chapter was inspired by conversations with the Jones team, who also
+ provided the data for this theoretical detour.
 \end_layout
 
 \begin_layout Section
@@ -5125,7 +5206,8 @@ reference "eq:forwards-eq"
 
 \begin_layout Standard
 We have a formal formula for computing the cell cycle distribution from
- a given limit distribution, thus solving the inverse problem.
+ a given limit distribution, providing a partial solution to the inverse
+ problem.
  Directly applying the formula (
 \begin_inset CommandInset ref
 LatexCommand formatted
@@ -5136,8 +5218,7 @@ reference "app:examples"
 ), we can reproduce the known results for the exponential (Markovian) process,
  and the discrete time process.
  In addition, we can concretely invert the gamma distribution.
- More generally, although we can formally invert distributions of the form
- 
+ More generally, we can formally invert distributions of the form 
 \begin_inset Formula $H(W)=p(W)e^{-\lambda W}$
 \end_inset
 
@@ -5145,7 +5226,7 @@ reference "app:examples"
 \begin_inset Formula $p$
 \end_inset
 
- is some polynomial, generically they do not yield proper distributions
+ is some polynomial, although generically they do not yield proper distributions
  upon inversion.
  We conjecture that in the space of distributions, at a generic point in
  the image of the forwards transforms, almost all directions (i.e.
@@ -6012,6 +6093,12 @@ Finally, we note that removing the assumption that all moments of
 \end_layout
 
 \begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:rat-retina"
+
+\end_inset
+
 Stochastic Fate Choice in Cultured Rat Retinal Progenitors
 \end_layout
 
@@ -7945,26 +8032,127 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-In summary, based on clonal analysis, we constructed a model for zebrafish
- retinal development, of independent progenitors carrying out a stochastic
- program, with evolving probabilities determined by their space-time location
- in a simple fashion.
- We verified the model with detailed, though limited, lineage trees obtained
- by live imaging studies.
- Although the model explains the fate choice of progenitors and the clone
- sizes observed, it does not satisfactorily explain the cell type choice
- and observed histogenesis.
- The publish work 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "He2012"
+In this work, we continue the themes and ideas from the previous chapter.
+ In particular, we implemented and validated an 
+\emph on
+in vivo
+\emph default
+ clonal labelling system which captures retinal development in zebrafish.
+ This allowed unprecedented detail of visualising the development on a clonal
+ resolution, through both cohort sampling and live imaging of individual
+ clones.
+ Relative to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:rat-retina"
 
 \end_inset
 
- includes a further experiment dissecting a possible link between asymmetric
- divisions and production of ganglial cells, but the conclusions are somewhat
- preliminary.
+, we could observe the spatial as well as temporal behaviour of progenitors,
+ and identified a wave which sweeps through the early retina and initiates
+ proliferation of progenitors.
  
+\end_layout
+
+\begin_layout Standard
+We also refined our 
+\begin_inset Quotes eld
+\end_inset
+
+null hypothesis
+\begin_inset Quotes erd
+\end_inset
+
+ of independent progenitors, through accounting for the proliferation wave
+ and introducing time-dependent (but a priori fixed) relative probabilities
+ for fate choice.
+ We found that this simple hypothesis is in agreement with the observed
+ clonal size evolution and pattern of fate choice in live imaged clones.
+\end_layout
+
+\begin_layout Standard
+Through the live imaging, it was also possible to study the pattern of eventual
+ cell types within individual clones and their histogenesis.
+ However, the relative lack of data precluded further refinement of the
+ model as it would introduce a large number of parameters to adjust, diluting
+ the power of the model.
+ Indeed, relative to 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:rat-retina"
+
+\end_inset
+
+, we could not image enough clones to re-do the analysis of fate choice
+ triplets and look for any statistically significant deviations from a purely
+ random process.
+ Nevertheless, the data does show very clear signs of a progression of cell
+ types, yet individual clones did not exhibit any definite ordering in cell
+ type choice.
+ It seems plausible that a set of evolving probabilities for cell type choice
+ is sufficient to explain the observations, but it would take a much larger
+ sample size to make any significant statements to that effect.
+\end_layout
+
+\begin_layout Standard
+A significant deviation from the simple story of independent progenitors,
+ which was noted in 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "chap:rat-retina"
+
+\end_inset
+
+, is the large correlation between the cell cycle times of sister progenitor
+ cells.
+ At the same time, a lack of clear correlation between unrelated cells in
+ the same physical vicinity strongly suggests that the source of synchrony
+ is internal, and due to sister cells somehow being in almost the same microscop
+ic state upon division.
+ It is unclear what other effects this extra similarity entails, since we
+ did not see correlation in fate choice or terminal cell types.
+ It does raise the possibility that with sufficient statistics, it may be
+ possible to discern fate correlation.
+\end_layout
+
+\begin_layout Standard
+Compared with the rat retina, zebrafish development proceeds much faster
+ --- typically an initial progenitor yields three or four generations before
+ a total loss of proliferation.
+ In our current model, we have three distinct phases of fate choice probabilitie
+s with sharp boundaries.
+ This choice of parametrising the evolving stochasticity of progenitors
+ was motivated by a desire for simplicity, knowing that our data will only
+ have so much resolution.
+ In principle, there could be a smoother or more featureful variation with
+ time.
+ In a larger system such as the rat, it would be interesting to know if
+ the same kind of phases exist (mostly proliferative, the strongly biased
+ towards asymmetric differentiation, finally strongly differentiative),
+ and if so, whether the boundaries are sharp or smooth.
+ An argument may be given that a phase in the middle with a large bias towards
+ asymmetry makes developmental sense, as it is more robust (a more linear
+ growth is less likely to catastrophically fail than an exponential one)
+ both in the total size and locally (leading to less need to move cells
+ around to achieve a certain average density of cells).
+ 
+\end_layout
+
+\begin_layout Standard
+We reiterate that our approach with modelling developmental systems is that
+ of constructing a null hypothesis, against which observations can be judged
+ to be surprising.
+ As such, the most direct approach to challenging the hypothesis would be
+ more data (larger sample sizes), which would be able to resolve finer features
+ of the development process.
+ 
+\end_layout
+
+\begin_layout Standard
+A feature of the process which we have not considered in detail is the initial
+ wave which signals the progenitors to begin their proliferation.
+ We have only characterised the process in so far as to give a timescale
+ on which we can build a model.
 \end_layout
 
 \begin_layout Section*
@@ -8131,8 +8319,108 @@ Bottom:
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Whilst detailed views on single clones are invaluable, it is essential to
+ confirm that such observed clones are representative of the growth of the
+ whole structure.
+ Some marking protocols make preferentially label particular cell types
+ or cells in particular states, or even influence cell fate through modified
+ fate choice or even apoptosis.
+ As an aside, the marker system used here is actually the second pass at
+ such a system, the first one based around a Gal4 driver (MAZe:nlsRFP, see
+ below) apparently causing cell death, and leading to a 6 month delay in
+ the project.
+ Sadly, it is hard to confirm representativeness of clones without first
+ gathering sufficient numbers of them, thus even in retrospect it is unclear
+ what could have been done to avoid the blind-alley.
+ In this case, individual clones simply did not appear anomalous, even though
+ in aggregate they differed significantly.
+ In any case, here we lay out our consistency checks which aim to show that
+ the MAZe:Kaede clones are indeed representative of the overall growth of
+ the retina.
+\end_layout
+
+\begin_layout Standard
+First, we need accurate measurements on the overall kinetics of the whole
+ retina, in particular the number of cells over time, in particular by measuring
+ the volume and cell density.
+ The volume was obtained by fitting a surface to a three dimensional (3D)
+ reconstruction of the retina at distinct developmental stages.
+ The density was estimated from confocal sagittal sections and direct measuremen
+ts of cell diameter perpendicular to the sections.
+ Specifically, we assumed that cells with their centre within a perpendicular
+ radius of the confocal plane (which is assumed to be of zero depth) will
+ show up in the section, leading to a viable 3D volume as the denominator.
+ These results revealed that the embryonic retina consists of approximately
+ 1,800 cells at 24 hpf, rising to approximately 11,000 cells at 48 hpf,
+ and 21,000 cells at 72 hpf.
+ This translates to a 6- and 12-fold increase, respectively.
+ 
+\end_layout
+
+\begin_layout Standard
+Clones derived from single progenitors at 24 hpf, as expected, showed variabilit
+y in size, both at 48 hpf and 72 hpf.
+ Yet, the average increase in the size of these clones was strikingly consistent
+ with the measured increase in total cell number in a normal retina (
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "fig:zebra-fish-clone-verification"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Furthermore, two other independent methods of clone induction, single-cell
+ electroporation and transplantation (of labelled cells in one animal into
+ the unlabelled retina of another), gave very similar results.
+ Moreover, clones from RPCs at 24 or 32 hpf produced, when pooled, a ratio
+ of cell types that was comparable to the tissue’s composition.
+ These results indicate that the clones, though individually variable in
+ size and fates, are quantitatively representative of the retina as a whole.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename zebrafish-clone-verification.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:zebra-fish-clone-verification"
+
+\end_inset
+
+Plot showing that relative growth of clones generated by various methods
+ agree with overall cell number change, with the exception of MAZe-nlsRFP
+ clones.
+ It was never clear why MAZe-nlsRFP labelled cells appeared to die after
+ 48 hpf, but it demonstrates the importance of verifying the representativeness
+ of any labelling method if one is to conduct a rigorous clonal analysis.
 \end_layout
 
 \end_inset
@@ -8140,36 +8428,13 @@ Bottom:
 
 \end_layout
 
-\begin_layout Standard
-If one wishes to understand how a complete CNS structure like the retina
- is formed at a clonal level, it is critical to know that the growth of
- clones one is studying can fully account for the growth of the structure,
- as some marking protocols may preferentially label particular cell types
- or be harmful to the labeled cells.
- To assess whether the MAZe:Kaede retinal clones are accurately representative
- of retinal growth and differentiation, we first explored the growth kinetics
- of the whole retina.
- By fitting a surface to a three dimensional (3D) reconstruction of the
- retina, we obtained its volume at distinct developmental stages and combined
- this with measurements of cell density determined from confocal sagittal
- sections (Figures 2A–2C, Experimental Procedures, and Supplemental Experimental
- Procedures) to obtain total retinal cell number as a function of developmental
- time (Figure 2D).
- These results revealed that the embryonic retina consists of approximately
- 1,800 cells at 24 hpf (Figure 2D and Figures S2G and S2H), rising to approximat
-ely 11,000 cells at 48 hpf, and 21,000 cells at 72 hpf.
- This translates to a 6- and 12-fold increase, respectively.
- Clones derived from single progenitors at 24 hpf, as expected, showed variabili
-ty in size, both at 48 hpf and 72 hpf (Figure 3A).
- Yet, the average increase in the size of these clones was strikingly consistent
- with the measured increase in total cell number in a normal retina (Figure
- 2D).
- Two other independent methods of clone induction, single-cell electroporation
- and transplantation, gave very similar results (Figures S2A–S2F).
- Moreover, clones from RPCs at 24 or 32 hpf produced, when pooled, a ratio
- of cell types that was comparable to the tissue’s composition (Figure 2E).
- These results indicate that the clones, though individually variable in
- size and fates, are quantitatively representative of the retina as a whole.
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -8180,9 +8445,21 @@ Conclusions and Further Work
 In this thesis, we have tried to demonstrate the role that quantitative
  clonal lineage tracing may play in dissecting the underlying cell kinetics,
  in both homoeostasis as well as highly non-equilibrium situations.
- In general, we find that a model of stochastic cell behaviour is at least
- consistent with experiments, and enjoy a relatively simple description.
- In particular:
+ In particular, we have focused on the utility of being able to use the
+ information in the entire 
+\emph on
+distribution
+\emph default
+ of clone sizes, as opposed to merely the mean or variance.
+ We have mostly been preoccupied with models of independent stochastic cells,
+ both for their analytical tractability but also the relatively few parameters
+ necessary to fit against experimental data; at the present level of experimenta
+lly achievable precision, these simple models appear sufficient to form
+ a basis for understanding observed behaviour.
+\end_layout
+
+\begin_layout Standard
+In particular:
 \end_layout
 
 \begin_layout Itemize
@@ -8191,6 +8468,9 @@ We extended the existing paradigm in epithelial tissue with quantitative
  branching ratios.
  Importantly, the precision allows us to rule out certain forms of independence
  between daughter cells.
+ The level of precision available is sufficient to complement accepted methods
+ of biochemical staining as the primary way through which quantitative measureme
+nts may be carried out.
 \end_layout
 
 \begin_layout Itemize
@@ -8200,7 +8480,11 @@ We found that a stochastic model of fate choice is capable of describing
 in vitro
 \emph default
  and in live embryos.
- 
+ In this domain, the main utility of the model is as a null hypothesis against
+ which we can understand if an observed collective behaviour is the result
+ of some precise regulated process or merely a statistically likely outcome
+ (for example, the complex pattern of potential cell types that result from
+ a given retinal progenitor cell).
 \end_layout
 
 \begin_layout Itemize
@@ -8210,6 +8494,8 @@ We extended theoretical understanding of supercritical, Markov branching
  We find some bounds on theoretically allowed limit distributions and a
  formula for potentially computing cell cycle distributions from measured
  limited distributions.
+ We also applied this to a small data set on hyper-proliferating cultured
+ human cervical epithelium.
 \end_layout
 
 \begin_layout Standard
@@ -8243,6 +8529,17 @@ nts), or nearby cells could actively inhibit each other via cell-cell signals.
  accessible timescales.
  It may be more possible to instead distinguish between these possibilities
  with non-universal corrections.
+\end_layout
+
+\begin_layout Standard
+However, the primary driving force behind many of the works in this thesis
+ has been novel experiments, which yield new forms of data that have no
+ established method of analysis.
+ We want to emphasise the importance of taking the data as the primary object
+ of study, rather than trying to gang-press some particular or fashionable
+ method into service.
+ As such, future work will likely be dominated by the need to understand
+ and refine the experimental procedures which generate novel types of data.
 \end_layout
 
 \begin_layout Standard
