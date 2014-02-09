@@ -299,7 +299,11 @@ In that case, cells in the IFE were modelled as non-interacting, each cell
  independently choosing when to divide or permanently differentiate and
  leave the basal layer.
  The study of such systems has a long tradition in mathematical biology,
- under the title of branching processes 
+ under the title of 
+\emph on
+branching processes
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Athreya2004"
@@ -307,22 +311,193 @@ key "Athreya2004"
 \end_inset
 
 .
- A crucial theorem of that theory states that: assuming a population of
- cells which maintain their number (i.e.
- homoeostatic or in equilibrium), if one were to label a single cell and
- count its progeny (a clone), then in the interesting case where some of
- that clone continue to proliferate, their number would eventually (on average)
- increase linearly with time, 
+ Concretely, let us consider a population of progenitors which regularly
+ (with unit time) decide to divide.
+ Each division may yield zero, one or two new progenitors.
+ The requirement of maintaining average number of cells (also known as 
 \emph on
-independent of any other features of those cells
+criticality
 \emph default
+ in the branching process literature
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+And if the number decreases or increases on average it is known as 
+\emph on
+subcritical
+\emph default
+ or 
+\emph on
+supercritical
+\emph default
+, respectively.
+\end_layout
+
+\end_inset
+
+) requires that the probabilities of yielding zero or two progenitors must
+ be exactly equal:
+\begin_inset Formula 
+\[
+\textrm{progenitor}\longrightarrow\begin{cases}
+2\times\textrm{progenitor} & r\\
+\textrm{progenitor} & 1-2r\\
+\varnothing & r
+\end{cases}
+\]
+
+\end_inset
+
+Mathematically, we may analyse this with a generating function: if the probabili
+ty of having 
+\begin_inset Formula $n$
+\end_inset
+
+ progenitors at time 
+\begin_inset Formula $t$
+\end_inset
+
+ is 
+\begin_inset Formula $P_{n}(t)$
+\end_inset
+
+, we consider the function
+\begin_inset Formula 
+\[
+F(t,z)=\sum_{n}P_{n}(t)z^{n}.
+\]
+
+\end_inset
+
+Furthermore, we have that each successive generation will be related to
+ the previous by
+\begin_inset Formula 
+\[
+F(t+1,z)=r+(1-2r)F(t,z)+r\left[F(t,z)\right]^{2}=f\left[F\left(t,z\right)\right]
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $f(z)=r+(1-2r)z+z^{2}$
+\end_inset
+
 .
- In corollary, the chance of such a surviving clone must decrease as one
- over time.
- In particular, one makes no assumption about distributions of cell cycle
- lengths, or the precise hierarchy leading from self-proliferation to differenti
-ation.
- The only assumptions are independence and homoeostasis.
+ Thus at time 
+\begin_inset Formula $t$
+\end_inset
+
+, 
+\begin_inset Formula $F(t,z)$
+\end_inset
+
+ will be the 
+\begin_inset Formula $t$
+\end_inset
+
+-fold iterate of 
+\begin_inset Formula $f$
+\end_inset
+
+ upon 
+\begin_inset Formula $F(0,z)$
+\end_inset
+
+.
+ If we begin with a single progenitor 
+\begin_inset Formula $F(0,z)=z$
+\end_inset
+
+, we can calculate the probability that all its progeny will die as 
+\begin_inset Formula $P_{0}(t)=f^{(t)}(0)$
+\end_inset
+
+.
+ Noting that 
+\begin_inset Formula $f(1)=1$
+\end_inset
+
+ and 
+\begin_inset Formula $f(z)>z$
+\end_inset
+
+ for 
+\begin_inset Formula $0\le z<1$
+\end_inset
+
+, we can immediately conclude that 
+\begin_inset Formula $P_{0}(t)\rightarrow1$
+\end_inset
+
+ as 
+\begin_inset Formula $t\rightarrow\infty$
+\end_inset
+
+; that is, it is almost certain that a given progenitor's progeny (its clone)
+ will eventually die out.
+ At the same time, the average number of progenitors is one, meaning that
+ conditioned on survival, the average clone size must increase without bound:
+ 
+\begin_inset Formula $\left\langle n\right\rangle _{\mathrm{surv.}}\rightarrow\infty$
+\end_inset
+
+.
+ Biologically, this means that eventually the tissue becomes mono-clonal,
+ that is, entirely derived from a single progenitor.
+ In fact, via some careful analysis, it is possible to show that asymptotically
+ 
+\begin_inset Formula $1-P_{0}(t)\sim1/rt$
+\end_inset
+
+,
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Notation: 
+\begin_inset Formula $f\sim g$
+\end_inset
+
+ means that in the appropriate limit, 
+\begin_inset Formula $f/g\in\Theta\left(c\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ and thus the average clone size conditioned on survival will grow linearly
+ with time.
+ Finally, it can be shown that by scaling the distribution by its average
+ size, we obtain a well-defined 
+\emph on
+scaling limit
+\emph default
+ of clone size distribution
+\begin_inset Formula 
+\[
+\frac{1}{\left\langle n\right\rangle _{\mathrm{surv.}}}P_{n}(t)\longrightarrow e^{-\frac{n}{\left\langle n\right\rangle _{\mathrm{surv.}}}}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Indeed, it is a theorem of branching processes that the linear scaling of
+ 
+\begin_inset Formula $\left\langle n\right\rangle _{\mathrm{surv.}}$
+\end_inset
+
+ and exponential form of the scaling limit remains invariant even if we
+ add more cell types or have arbitrary cell cycle distributions (we effectively
+ considered a degenerate case above), as long as the progenitors are independent
+ in their fate choice and the process is critical, i.e.
+ the progenitors will maintain their number, reflecting homoeostasis or
+ equilibrium of the tissue.
 \end_layout
 
 \begin_layout Standard
@@ -335,7 +510,7 @@ universal behaviour
  cells), and which do not depend on microscopic details, but rather on symmetrie
 s and dimensionality of the situation.
  Such robustness of prediction allows for easy confirmation in experiments,
- and indeed precisely this linear scaling was a central argument in 
+ and indeed these universal phenomena were central arguments in 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Clayton2007"
@@ -347,13 +522,18 @@ key "Clayton2007"
  Note that it is only the linear scaling which is universal: the rate at
  which the clone can be expected to grow is not, and will depend in complex
  ways on the microscopic details.
+ In particular, if there are a plethora of parameters in the model, the
+ above analysis can only confirm that such type of model is appropriate,
+ and yield a single quantitative measure (the effective growth rate of surviving
+ clones).
 \end_layout
 
 \begin_layout Standard
-However, one might wonder about the assumption of independence.
+More relevantly, one might wonder about the assumption of independence.
  Whilst relying on statistical averaging to achieve homoeostasis is nice
  in theory, one cannot but feel that some negative feedback loop would be
- more stable, especially in the presence of injury.
+ more stable, especially in the presence of potential injury, and that biologica
+l systems may well use such mechanisms.
  A simple model might be that of cells which differentiate and leave behind
  a hole, which is filled by one of its neighbours --- as might be expected
  for contact inhibition of progenitors.
@@ -376,65 +556,77 @@ key "CLIFFORD1973"
 \end_layout
 
 \begin_layout Standard
-In analogy to our one-cell derived clone in the branching process, we can
- ask what happens to a single labelled cell in a sea of unlabelled cells.
- It is known 
+One can gain some appreciation of the behaviour by considering some limits.
+ If we have 
+\begin_inset Formula $N$
+\end_inset
+
+ cells, all of which are neighbours of each other, we have a model of a
+ kind of infinite dimensional space as 
+\begin_inset Formula $N\rightarrow\infty$
+\end_inset
+
+.
+ Then, if individual cells differentiate or die at a unit rate, each cell
+ will have a 
+\begin_inset Formula $1/N$
+\end_inset
+
+ chance 
+\begin_inset Formula $N$
+\end_inset
+
+ times per unit time to be the one to divide and fill that hole.
+ All cells are equivalent, and so we must get the same answer as a pure
+ branching process with no interactions at all.
+ This is an instance of the general statistical physics phenomenon that
+ in high dimensions interactions are not important and often one suffices
+ to ignore them or incorporate them in a mean-field manner.
+\end_layout
+
+\begin_layout Standard
+In the opposite end of the spectrum, we can imagine that cells are laid
+ out on a line, with only two neighbours.
+ In this case, our clone can be thought of as two domain walls, delimiting
+ the boundaries.
+ These domain walls will randomly walk, and if they ever touch, the clone
+ will die permanently.
+ Thus the size of the clone is a one-dimensional random walk with an absorbing
+ boundary at zero, starting at one.
+ Like all random walks, its distance from its starting point grows as 
+\begin_inset Formula $\sqrt{t}$
+\end_inset
+
+, and assuming that it does not die, its size will be a normal distribution
+ with width also proportional to 
+\begin_inset Formula $\sqrt{t}$
+\end_inset
+
+.
+ In this respect, it is similar to the pure branching process in that it
+ has a scaling limit distribution, but the scaling of 
+\begin_inset Formula $\left\langle n\right\rangle _{\mathrm{surv.}}$
+\end_inset
+
+ with time changes, as does the precise form of the distribution.
+\end_layout
+
+\begin_layout Standard
+It turns out 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Bramson1980"
 
 \end_inset
 
- that the answer depends crucially on the dimension of the space that the
- cells live in.
- Assuming that the clone survives, at large times: 
-\end_layout
-
-\begin_layout Itemize
-in 1D, the size eventually grows as square root of time: 
-\begin_inset Formula $\mathbb{E}\left[n|n>0\right]\sim\sqrt{t}$
-\end_inset
-
-;
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-Notation: 
-\begin_inset Formula $f\sim g$
-\end_inset
-
- means that in the appropriate limit, 
-\begin_inset Formula $f/g\in\Theta\left(c\right)$
+ that the infinite dimensional behaviour persists even in three dimensions
+ (the upper critical dimension); whilst in two dimensions the scaling distributi
+on is still an exponential, the scaling with time is 
+\begin_inset Formula $\left\langle n\right\rangle _{\mathrm{surv.}}\sim t/\log\left(t\right)$
 \end_inset
 
 .
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-in 2D, 
-\begin_inset Formula $\mathbb{E}\left[n|n>0\right]\sim t/\log\left(t\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-and in 3D (or, as a mathematical extension, above 3D), 
-\begin_inset Formula $\mathbb{E}\left[n|n>0\right]\sim t$
-\end_inset
-
-, just as if there were no interactions at all.
- 
-\end_layout
-
-\begin_layout Standard
-Intuitively, in low dimensions, a cell is likely to be replaced by a cell
+ Intuitively, in low dimensions, a cell is likely to be replaced by a cell
  of the same label, leading to a sort of jamming where the boundary of the
  clone does not grow very fast; in higher dimensions, a cell will be replaced
  by a randomly labelled cell, and so each division will look very much random,
@@ -453,7 +645,8 @@ key "Bramson1979,Ben-Naim1996,Dornic2001,Dornic2005,Canet2005"
 \end_inset
 
  suggest that the scaling is in fact universal, and do not depend on the
- details of the geometry, or how the interaction works exactly.
+ details of the geometry, or (more importantly) how the interaction works
+ exactly.
  For instance, it may be that cells are replaced not by immediate neighbours,
  but rather by any within a few cell diameters.
 \end_layout
@@ -476,8 +669,8 @@ key "Klein2008"
 
 \end_inset
 
- that in the IFE may exihibit the 2-dimensional case, but fundamentally,
- the extra factor of
+ that the IFE may exihibit the 2-dimensional case, but fundamentally, the
+ extra factor of
 \begin_inset Formula $\log\left(t\right)$
 \end_inset
 
@@ -496,8 +689,12 @@ key "Klein2008"
  function of time.
 \end_layout
 
-\begin_layout Section
-Limits of universality
+\begin_layout Standard
+Branching processes
+\end_layout
+
+\begin_layout Standard
+Voter model
 \end_layout
 
 \begin_layout Standard
@@ -524,6 +721,9 @@ infer
  In particular, due to the difficulty of obtaining observations, the inference
  must be efficient, and maximally use the information contained in a relatively
  small number of observations.
+ To this end, we advocate the use of Bayesian methods, which are well suited
+ to the problem of obtaining distributions of parameters conditioned on
+ observations.
 \end_layout
 
 \begin_layout Section
@@ -8437,6 +8637,27 @@ Differentiating between different microscopic/biochemical models is still
  To that end, a major area of further work must be improvements in experimental
  efficiency, as well as computational efficiency in mapping observed deviations
  to concrete models.
+ 
+\end_layout
+
+\begin_layout Standard
+In addition, it would be preferable to extend the rigorous Bayesian approach
+ used in the analysis of oesophageal epithelium into the non-equilibrium
+ models.
+ The main obstacle appeared to be the difficulty of efficiently calculating
+ the likelihood of the data, given a particular set of parameters.
+ Even in the case of the simple 3-type, Poissonian branching model for the
+ oesophagus, we had to find a numerical procedure which was sufficiently
+ fast and precise to be able to carry out the program.
+ This difficulty is compounded by the need to exhaustively sample the parameter
+ space, which for the non-equilibrium models considered here are quite high.
+ Nevertheless, the field of applied Bayesian methods continue to progress,
+ and modern methods (combined with modern computers) are capable of essentially
+ brute-force solution of many challenging problems.
+ For example, methods such as Markov Chain Monte-Carlo allow sampling in
+ the parameter space proportional to the likelihood, thus avoiding spending
+ excessive time exploring low likelihood parts of the space.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -8571,8 +8792,8 @@ n number by homoeostasis.
 \end_inset
 
  growth of average clone size instead.
- However, it does also appear that there exist measurable states of the
- progenitors which influences the likelihood of division 
+ However, it does also appear that there exist measurably distinct states
+ of the progenitors which influences the likelihood of division 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Snippert2010"
