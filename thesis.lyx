@@ -510,7 +510,8 @@ universal behaviour
  cells), and which do not depend on microscopic details, but rather on symmetrie
 s and dimensionality of the situation.
  Such robustness of prediction allows for easy confirmation in experiments,
- and indeed these universal phenomena were central arguments in 
+ and indeed observations of these universal phenomena were central arguments
+ in 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Clayton2007"
@@ -689,12 +690,8 @@ key "Klein2008"
  function of time.
 \end_layout
 
-\begin_layout Standard
-Branching processes
-\end_layout
-
-\begin_layout Standard
-Voter model
+\begin_layout Section
+Non-universal behaviour and Bayesian methods
 \end_layout
 
 \begin_layout Standard
@@ -707,7 +704,6 @@ Whilst universal scaling is very useful for confirming that a particular
  rate constant associated with linear scaling of surviving clone sizes,
  that constant is not related to the underlying cell-scale dynamics in an
  obvious manner.
- 
 \end_layout
 
 \begin_layout Standard
@@ -723,7 +719,77 @@ infer
  small number of observations.
  To this end, we advocate the use of Bayesian methods, which are well suited
  to the problem of obtaining distributions of parameters conditioned on
- observations.
+ observations, and are provably optimal.
+\end_layout
+
+\begin_layout Standard
+In particular, the class of models we will consider are all stochastic,
+ with some set of parameters, which naturally output likelihoods of observing
+ certain patterns.
+ Thus, they lend themselves to a simple application of Bayes' rule:
+\begin_inset Formula 
+\[
+\underset{\mathrm{posterior}}{\underbrace{P\left(\mathrm{parameters}|\mathrm{observations}\right)}}\underset{\,}{\propto}\underset{\mathrm{likelihood}}{\underbrace{P\left(\mathrm{observations}|\mathrm{parameters}\right)}}\underset{\mathrm{prior}}{\underbrace{P\left(\mathrm{parameters}\right)}}.
+\]
+
+\end_inset
+
+Because the left hand side is a complete distribution (considered as a function
+ over parameters), we can extract not only the most likely values for parameters
+, but also a range representing the extent of our confidence.
+\end_layout
+
+\begin_layout Standard
+In fact, because we will often have an uninformative prior, and collect
+ enough observations that the likelihood function (considered as a function
+ over parameters) is sharply peaked, and the prior is reasonably uniform
+ over that peak, we would be able to neglect the prior entirely and just
+ deal with the likelihood.
+ Indeed, presumably we would continue to take observations until the answer
+ was relatively independent of any reasonable choice of prior.
+\end_layout
+
+\begin_layout Standard
+A naive approach to calculating the likelihood function is to evaluate it
+ at some dense set of lattice points spanning a large range of parameters.
+ In practice we find this to be reasonable as long as the number of parameters
+ is limited.
+ 
+\end_layout
+
+\begin_layout Section
+Non-equilibrium systems
+\end_layout
+
+\begin_layout Standard
+In adult maintenance of tissue, homoeostasis is a safe assumption, even
+ if the mathematical realisation requires some choice, e.g.
+ between stochastic equilibrium or true negative-feedback maintained equilibrium.
+ As we have seen, with this constraint, the potential macroscopic behaviours
+ are tightly constrained, and there exist a long history of theoretical
+ results which delineate them.
+ 
+\end_layout
+
+\begin_layout Standard
+Many interesting biological systems are, however, not in homoeostasis.
+ Two prominent examples are during embryo development, and development of
+ tumours due to malregulation in cancer; in a way, prototypically going
+ towards or away from equilibrium.
+ 
+\end_layout
+
+\begin_layout Standard
+Our belief (prior, if you will) is that common mechanisms will be shared
+ between homoeostatic systems and in these out-of-equilibrium situations.
+ In particular, we expect stochastic models of progenitors to be a suitable
+ departure point, and act as a null-hypothesis to understand surprising
+ correlations which nevertheless are the inevitable consequence of such
+ stochastic models.
+ Thus, we will have a focus on finding the simplest model (with the fewest
+ parameters) which are capable of recapitulating observations, and erring
+ on the side of underfitting, rather than a comprehensive model which can
+ explain everything.
 \end_layout
 
 \begin_layout Section
@@ -3221,8 +3287,8 @@ hematopoietic marker
  They are simple antibodies which attach to particular molecules that we
  have imposed a narrative upon.
  Those molecules exist momentarily, but we try to assign teleological function
- to them; we should not be amazed that this can work, and not surprised
- when it fails a little.
+ to them; we should be amazed that this can work, and not surprised when
+ it fails a little.
  Many experiments, for instance in the context of cancer, rely on the qualitativ
 e response from Ki67 as evidence of greater or lesser proliferation.
  What we have observed is that in the limit of very fast cycle, the link
@@ -8817,8 +8883,8 @@ key "Snippert2014"
 \end_layout
 
 \begin_layout Itemize
-Another one-dimensional tissue with critical branching is found in spermatogenes
-is 
+As mentioned in the introduction, another one-dimensional tissue with critical
+ branching is found in spermatogenesis 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Klein2010"
