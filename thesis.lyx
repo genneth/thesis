@@ -34,7 +34,7 @@ logicalmkup
 \bibtex_command default
 \index_command default
 \paperfontsize 12
-\spacing double
+\spacing onehalf
 \use_hyperref true
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
@@ -93,6 +93,18 @@ Stochastic Cell Fate Choice from Lineage Tracing
 
 \begin_layout Author
 Gen Zhang
+\begin_inset Newline newline
+\end_inset
+
+Churchill College
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+This dissertation is submitted for the degree of Doctor of Philosophy
 \end_layout
 
 \begin_layout Chapter*
