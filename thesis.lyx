@@ -281,13 +281,13 @@ in situ
 \begin_layout Standard
 Traditionally, the problem has been tackled with a reductionist approach
  of explicating the molecular mechanism within cells.
- In particular, a large body of work now exist which delineate the various
+ In particular, a large body of work now exists which delineates the various
  gene and protein expression networks that modify cell fate.
  A central challenge to this effort is the vast complexity of the uncovered
  biochemical networks, which confound attempts to identify simple principles
  and concepts which interact in predictable ways to allow comprehension
  and prediction of a range of observations.
- Instead, often the clearest biochemical dissection occur very far from
+ Instead, often the clearest biochemical dissection occurs very far from
  a typical environment, leading to difficulties, for example, in translating
  cell fate choice in culture to that during regular maintenance.
  
@@ -334,7 +334,8 @@ key "Athreya2004"
  Concretely, let us consider a population of progenitors which regularly
  (with unit time) decide to divide.
  Each division may yield zero, one or two new progenitors.
- The requirement of maintaining average number of cells (also known as 
+ The requirement of maintaining the average number of cells (also known
+ as 
 \emph on
 criticality
 \emph default
@@ -657,7 +658,7 @@ on is still an exponential, the scaling with time is
 
 \begin_layout Standard
 To be precise, the results above have only been mathematically proven in
- square lattices, and a few others regular lattices (hexagonal, for instance).
+ square lattices, and a few other regular lattices (hexagonal, for instance).
  However, a body of numerical and theoretical work 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -665,9 +666,9 @@ key "Bramson1979,Ben-Naim1996,Dornic2001,Dornic2005,Canet2005"
 
 \end_inset
 
- suggest that the scaling is in fact universal, and do not depend on the
- details of the geometry, or (more importantly) how the interaction works
- exactly.
+ suggests that the scaling is in fact universal, and does not depend on
+ the details of the geometry, or (more importantly) how the interaction
+ works exactly.
  For instance, it may be that cells are replaced not by immediate neighbours,
  but rather by any within a few cell diameters.
 \end_layout
@@ -690,12 +691,12 @@ key "Klein2008"
 
 \end_inset
 
- that the IFE may exihibit the 2-dimensional case, but fundamentally, the
- extra factor of
+ that the IFE may exhibit the 2-dimensional case, but fundamentally, the
+ extra factor of 
 \begin_inset Formula $\log\left(t\right)$
 \end_inset
 
- is too close to a constant for achievable experiments to be seen: at short
+ is too close to a constant to be seen in achievable experiments: at short
  times, the jamming has not really set in and clone sizes still scale as
  
 \begin_inset Formula $t$
@@ -1122,14 +1123,15 @@ key "Doupe2012"
 ary therein; the experimental work was performed by DPD, MPA and AR, project
  planning by PHJ, thorough discussion with AMK, and data analysis by GZ
  and BDS.
- PHJ wrote the main text of Ref 
+ PHJ wrote the majority of the text in Ref 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Doupe2012"
 
 \end_inset
 
-, but section 2.2 is also the authorship of BDS.
+, but the section reproduced below was written by the present author with
+ BDS.
 \end_layout
 
 \begin_layout Standard
@@ -1425,8 +1427,8 @@ key "Clayton2007,Doupe2010"
 .
  To assess the validity of this model, and to quantify the respective rates
  and probabilities, we must turn now to a more detailed analysis of the
- short-time data, prior to scaling, where signatures of the detailed dynamics
- can be elucidated.
+ short-time data, prior to the collapse to scaling, where signatures of
+ the detailed dynamics can be elucidated.
  To prepare for this analysis, we must embed the progenitor cell dynamics
  into a parametrisation that includes the stratification and loss of terminally
  differentiated cells.
@@ -1863,7 +1865,7 @@ P\left(\lambda,r,\rho|D\right)\propto P\left(D|\lambda,r,\rho\right)P\left(\lamb
 \end_inset
 
 where the posterior distribution 
-\begin_inset Formula $P(D|\lambda,r,\rho)$
+\begin_inset Formula $P\left(\lambda,r,\rho|D\right)$
 \end_inset
 
  denotes the probability of obtaining the data 
@@ -1889,7 +1891,7 @@ where the posterior distribution
 a posteriori
 \emph default
  by imposing the normalisation, 
-\begin_inset Formula $\int_{0}^{\infty}\! d\lambda\int_{0}^{1}\! d\rho\int_{0}^{\frac{1}{2}}\! dr\, P\left(\lambda,r,\rho|D\right)=1$
+\begin_inset Formula $\int_{0}^{\infty}\!d\lambda\int_{0}^{1}\!d\rho\int_{0}^{\frac{1}{2}}\!dr\,P\left(\lambda,r,\rho|D\right)=1$
 \end_inset
 
 .
@@ -2298,6 +2300,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename intermouse-tau-basal.pdf
+	scale 80
 
 \end_inset
 
@@ -2308,6 +2311,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename intermouse-tau-normal.pdf
+	scale 80
 
 \end_inset
 
@@ -2334,7 +2338,7 @@ Upper
 \end_inset
 
 .
- On the left, we plot 
+ We plot 
 \begin_inset Formula $\log(\tau)$
 \end_inset
 
@@ -2353,7 +2357,7 @@ Upper
 Lower
 \series default
 : we use the full (basal and suprabasal joint distribution) from 11 mice,
- with the combined average in purple, and the average from the left figure
+ with the combined average in purple, and the average from the upper figure
  in green.
 \end_layout
 
@@ -2472,7 +2476,7 @@ reference "fig:oes-joint-data"
 \end_inset
 
 .
- We used the point estimates to computed a set of probabilities, with which
+ We used the point estimates to compute a set of probabilities, with which
  we can compute 
 \begin_inset Formula $95\%$
 \end_inset
@@ -2556,9 +2560,9 @@ name "fig:oes-joint-data"
 \end_inset
 
 Joint clone size distribution of clones containing at least one basal cell
- and two cells in total at 22, 30 and 84 days post-induction; orange bars
- show raw counts, blue crosses show model predictions using point estimates
- for parameters from 
+ and two cells in total at 22 days (top left), 30 days (top right) and 84
+ days (bottom) post-induction; orange bars show raw counts, blue crosses
+ show model predictions using point estimates for parameters from 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:oes-normal-model"
@@ -2702,8 +2706,8 @@ Effects of atRA treatment
 
 \begin_layout Standard
 It is straightforward to implement the same inference algorithm to address
- the atRA treated tissue.
- Wit the assumption that atRA pre-treatment establishes a new steady-state
+ the atRA (all-trans retinoic acid) treated tissue.
+ With the assumption that atRA pre-treatment establishes a new steady-state
  EP cell dynamics, the resulting fit of the model to the experimental data
  is shown in 
 \begin_inset CommandInset ref
@@ -2964,7 +2968,7 @@ d the potential signature of a second very slow-cycling or quiescent cell
  population.
  Although the existence of such a population in oesophageal epithelium was
  ruled out by the H2B-GFP assay, with the predictions of the EP model, we
- can do back and question whether the dynamics of the single-cell clones
+ can go back and question whether the dynamics of the single-cell clones
  are consistent with the ansatz of the modelling scheme.
 \end_layout
 
@@ -3078,8 +3082,9 @@ m which maintains the tissue, which can be quantitatively modelled by a
  be accurately measured; the other three were measured from observed clone
  size distributions.
  Moreover, we have shown that this model can capture the effect of atRA
- treatment through a straightforward adjustment of the average EP cell division
- rate.
+ treatment through a straightforward adjustment of the overall timescale
+ (the average EP cell division rate and stratification rate of cells committed
+ to differentitation increase proportionally).
  
 \end_layout
 
@@ -3134,14 +3139,15 @@ An obvious extension of the present model is to incorporate some interaction
 \begin_inset Formula $d$
 \end_inset
 
-, it does not know that the tissue is 2-dimensionally, and behaves in the
+, it does not know that the tissue is 2-dimensional, and behaves in the
  mean-field fashion).
 \end_layout
 
 \begin_layout Standard
-Combined with the qualitative biological observations mentioned in 
+Combined with the qualitative biological observations mentioned in section
+ 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand ref
 reference "sec:ee-background-and-motivation"
 
 \end_inset
@@ -3347,7 +3353,7 @@ critical branching process
 
 \begin_layout Standard
 If instead of exactly replenishing the number of proliferating cells, on
- average the number of cells increase, then we have a 
+ average the number of cells increases, then we have a 
 \emph on
 super-critical process
 \emph default
@@ -3360,7 +3366,7 @@ super-critical process
  perhaps an order of magnitude between transient non-universal behaviour
  on the order of a few cell cycles, and eventual limits of growth due to
  space or nutrients, some tens of cell cycles later.
- In particular, we are thinking of cancer like proliferation, both in live
+ In particular, we are thinking of cancer-like proliferation, both in live
  animals and in culture, where potentially a breakdown in the regulatory
  mechanism particularly lends itself to such a model.
  
@@ -3461,7 +3467,7 @@ Concretely, let a branching process be composed of equipotent cells, with
 \end_inset
 
  of equal order such that no death occurs, with the only difference being
- the existence of terminal clones (see appendix
+ the existence of terminal clones (see appendix 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "app:condition-survival"
@@ -3505,7 +3511,7 @@ Malthusian-rate
  defined to be the (only) positive root of
 \begin_inset Formula 
 \[
-f^{\prime}(1)\int_{0}^{\infty}e^{-\alpha y}g(y)\, dy=1;
+f^{\prime}(1)\int_{0}^{\infty}e^{-\alpha y}g(y)\,dy=1;
 \]
 
 \end_inset
@@ -3522,7 +3528,7 @@ and in the limit of infinite time, the distribution (normalised to unit
  is the unique solution (amongst distributions with unit mean) of
 \begin_inset Formula 
 \begin{equation}
-\phi(u)=\int_{0}^{\infty}f\left[\phi\left(ue^{-\alpha y}\right)\right]g(y)\, dy.\label{eq:forwards-eq}
+\phi(u)=\int_{0}^{\infty}f\left[\phi\left(ue^{-\alpha y}\right)\right]g(y)\,dy.\label{eq:forwards-eq}
 \end{equation}
 
 \end_inset
@@ -3595,7 +3601,7 @@ key "Athreya2004"
 \end_inset
 
 ).
- In both these cases, the biologically interesting situation where 
+ In both these cases, the biologically interesting situations where 
 \begin_inset Formula $f(s)=as+bs^{2}$
 \end_inset
 
@@ -3870,11 +3876,12 @@ reference "app:moment-theorems"
 
 \begin_layout Standard
 First, we may consider a process where the division of each cell can produce
- a large number of progeny relative to the average.
+ a large number of progeny relative to the average (this is obviously not
+ realistic in a biological context, for we will consider it for completeness).
  Specifically, consider 
 \begin_inset Formula 
 \[
-f(s)=\sum_{k=0}^{\infty}\frac{s^{k}}{2^{k}}=\frac{s}{s-2}.
+f(s)=\sum_{k=0}^{\infty}\frac{s^{k}}{2^{k}}=\frac{s}{2-s}.
 \]
 
 \end_inset
@@ -4007,7 +4014,7 @@ Limit distributions for binary fission power-law tailed cell cycles.
 \end_inset
 
 .
- Bottow shows the distribution of 
+ Bottom shows the distribution of 
 \begin_inset Formula $\log(W)$
 \end_inset
 
@@ -4055,7 +4062,7 @@ reference "eq:forwards-eq"
  we obtain
 \begin_inset Formula 
 \[
-h(t)=\int_{0}^{\infty}f\left[h\left(t-y\right)\right]g(y)\, dy,
+h(t)=\int_{0}^{\infty}f\left[h\left(t-y\right)\right]g(y)\,dy,
 \]
 
 \end_inset
@@ -4957,7 +4964,7 @@ Main figure shows the cell cycle distribution which gives the limit distribution
 \end_inset
 
 , such that 
-\begin_inset Formula $\int W\, H(W)\, dW=1$
+\begin_inset Formula $\int W\,H(W)\,dW=1$
 \end_inset
 
 ; we have shown specifically 
@@ -5169,7 +5176,7 @@ approximately
 \emph default
  uniformly distributed (as evidenced by a linear segment in the empirical
  cumulative distribution).
- And whilst the number of clone relative is small to the average size, the
+ And since the number of clones is small relative to the average size, the
  point-wise uniformity can be quite approximate indeed, nevertheless we
  can be fairly certain that it is not the case that 
 \begin_inset Formula $H\left(0^{+}\right)=0$
@@ -5446,7 +5453,7 @@ reference "app:examples"
  perturbations) lead off the manifold; but nevertheless, there is a countable
  number of perturbations which remain on it.
  Clearly, it would be beneficial to have a more precise characterisation
- of the manifold, and a ripe area for future theoretical work.
+ of the manifold, which is a ripe area for future theoretical work.
 \end_layout
 
 \begin_layout Standard
@@ -5477,7 +5484,7 @@ reference "eq:forwards-eq"
 \begin_inset Formula $g$
 \end_inset
 
- which do not significantly change extreme behaviours tends to have negligible
+ which do not significantly change extreme behaviours tend to have negligible
  effect on the outcome 
 \begin_inset Formula $H$
 \end_inset
@@ -5500,7 +5507,7 @@ shape constraint
  precisely, defining the survival function as
 \begin_inset Formula 
 \[
-S(t)=1-\int_{0}^{t}g(y)\, dy
+S(t)=1-\int_{0}^{t}g(y)\,dy
 \]
 
 \end_inset
@@ -5581,7 +5588,7 @@ and lifetime functions
 , we have a system of coupled, non-linear integral equations:
 \begin_inset Formula 
 \begin{equation}
-\phi^{(i)}(u)=\int_{0}^{\infty}f^{(i)}\left[\phi^{(1)}\left(ue^{-\alpha y}\right),\ldots,\phi^{(\mu)}\left(ue^{-\alpha y}\right)\right]g^{(i)}(y)\, dy.\label{eq:horrible}
+\phi^{(i)}(u)=\int_{0}^{\infty}f^{(i)}\left[\phi^{(1)}\left(ue^{-\alpha y}\right),\ldots,\phi^{(\mu)}\left(ue^{-\alpha y}\right)\right]g^{(i)}(y)\,dy.\label{eq:horrible}
 \end{equation}
 
 \end_inset
@@ -5930,7 +5937,7 @@ status open
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\phi^{(n)}(u)=\int_{0}^{\infty}\left\{ \sum_{\mathbf{k}}\frac{n!}{k_{1}!\cdots k_{n}!}f^{(k)}\left[\phi\left(ue^{-y}\right)\right]\left[\frac{\phi^{(1)}\left(ue^{-y}\right)e^{-y}}{1!}\right]^{k_{1}}\cdots\left[\frac{\phi^{(n)}\left(ue^{-y}\right)e^{-ny}}{n!}\right]^{k_{n}}\right\} g(y)\, dy
+\phi^{(n)}(u)=\int_{0}^{\infty}\left\{ \sum_{\mathbf{k}}\frac{n!}{k_{1}!\cdots k_{n}!}f^{(k)}\left[\phi\left(ue^{-y}\right)\right]\left[\frac{\phi^{(1)}\left(ue^{-y}\right)e^{-y}}{1!}\right]^{k_{1}}\cdots\left[\frac{\phi^{(n)}\left(ue^{-y}\right)e^{-ny}}{n!}\right]^{k_{n}}\right\} g(y)\,dy
 \]
 
 \end_inset
@@ -5964,7 +5971,7 @@ where the summation runs over all partitions of
 ): 
 \begin_inset Formula 
 \begin{equation}
-M_{n}=\sum_{\mathbf{k}}\frac{n!}{k_{1}!\cdots k_{n}!}f^{(k)}\left(1\right)\left(\frac{M_{1}}{1!}\right)^{k_{1}}\cdots\left(\frac{M_{n}}{n!}\right)^{k_{n}}\int_{0}^{\infty}e^{-ny}g(y)\, dy.\label{eq:moment-recursion}
+M_{n}=\sum_{\mathbf{k}}\frac{n!}{k_{1}!\cdots k_{n}!}f^{(k)}\left(1\right)\left(\frac{M_{1}}{1!}\right)^{k_{1}}\cdots\left(\frac{M_{n}}{n!}\right)^{k_{n}}\int_{0}^{\infty}e^{-ny}g(y)\,dy.\label{eq:moment-recursion}
 \end{equation}
 
 \end_inset
@@ -5993,7 +6000,7 @@ Since we assumed that all moments of
 
 \begin_inset Formula 
 \[
-M_{n}\left[1-\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\, dy\right]=C\left[M_{1},\ldots,M_{n-1}\right],
+M_{n}\left[1-\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\,dy\right]=C\left[M_{1},\ldots,M_{n-1}\right],
 \]
 
 \end_inset
@@ -6003,7 +6010,7 @@ where the right hand side only depends on the lower moments, and in particular
  Then
 \begin_inset Formula 
 \[
-1=\int_{0}^{\infty}f^{\prime}(1)e^{-y}g(y)\, dy>\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\, dy
+1=\int_{0}^{\infty}f^{\prime}(1)e^{-y}g(y)\,dy>\int_{0}^{\infty}f^{\prime}(1)e^{-ny}g(y)\,dy
 \]
 
 \end_inset
@@ -6151,7 +6158,7 @@ reference "eq:moment-recursion"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{M_{n}}{n!}\ge\sum_{k=1}^{n-1}\frac{M_{k}M_{n-k}}{k!(n-k)!}\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}\label{eq:moments-lower-bound}
+\frac{M_{n}}{n!}\ge\sum_{k=1}^{n-1}\frac{M_{k}M_{n-k}}{k!(n-k)!}\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\,dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\,dy}\label{eq:moments-lower-bound}
 \end{equation}
 
 \end_inset
@@ -6179,8 +6186,8 @@ reference "eq:moment-recursion"
 where 
 \begin_inset Formula 
 \begin{align*}
-K_{n} & =\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\, dy}\\
- & >\frac{f^{\prime\prime}(1)}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-2y}g(y)\, dy}\int_{0}^{\infty}e^{-ny}g(y)\, dy\\
+K_{n} & =\frac{f^{\prime\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\,dy}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-ny}g(y)\,dy}\\
+ & >\frac{f^{\prime\prime}(1)}{1-f^{\prime}(1)\int_{0}^{\infty}e^{-2y}g(y)\,dy}\int_{0}^{\infty}e^{-ny}g(y)\,dy\\
  & \ge C\eta^{-n}
 \end{align*}
 
@@ -6233,7 +6240,7 @@ with equality for
 , where 
 \begin_inset Formula 
 \[
-K_{2}=\frac{2\int_{0}^{\infty}e^{-2y}g(y)\, dy}{1-2\int_{0}^{\infty}e^{-2y}g(y)\, dy}.
+K_{2}=\frac{2\int_{0}^{\infty}e^{-2y}g(y)\,dy}{1-2\int_{0}^{\infty}e^{-2y}g(y)\,dy}.
 \]
 
 \end_inset
@@ -6246,7 +6253,7 @@ We obtain an upper bound in terms of the Catalan numbers
 
 \end_inset
 
-Then applying the moments bound
+Then applying the moments bound 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Philips1995"
@@ -6325,7 +6332,21 @@ As we have seen, it is possible to have a stochastic process which describes
  oesophageal epithelium, or skin.
  Such an approach has also seen success in other tissues which undergo continuou
 s replacement and renewal throughout adult life, such as in the sperm ducts
- [???] and intestines [???].
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Klein2010"
+
+\end_inset
+
+ and intestines 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lopez-Garcia2010"
+
+\end_inset
+
+.
  However, the central nervous system (CNS) is fundamentally different, as
  most neurons are not replaced during adult life.
  Thus, we are dealing with a system which is not only not in homoeostasis,
@@ -6354,8 +6375,15 @@ Relaxing homoeostasis to mere time-translation invariance allows for much
  For example, even without interaction, we have complex relations between
  clone size distributions and cell cycle lengths.
  With interactions, we can in principle have arbitrary reaction-diffusion
- systems, which are known [???] to be Turing-complete, and are therefore
- capable of simulating any other system.
+ systems, which are known 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bandini2005computing"
+
+\end_inset
+
+ to be Turing-complete, and are therefore capable of simulating any other
+ system.
  As such, we cannot hope to quantitatively bound the errors that our assumptions
  may induce, and any model we build could in principle be only valid within
  the experimental bounds.
@@ -6393,7 +6421,7 @@ in vivo
  As isolated RPCs share little common extracellular influences, this suggests
  that the regulation for the proliferation and differentiation of progenitors
  are intrinsic.
- However, at the same time, individual clones derived from RPCs are enormous
+ However, at the same time, individual clones derived from RPCs are enormously
  heterogeneous in size and composition 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -6985,7 +7013,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename divisionSynchrony.pdf
-	width 70col%
+	width 55col%
 
 \end_inset
 
@@ -6996,7 +7024,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename finishTimesHist.pdf
-	width 70col%
+	width 55col%
 
 \end_inset
 
@@ -7220,9 +7248,16 @@ From the raw experimental data several features emerged.
 \end_layout
 
 \begin_layout Standard
-In Table 2, we also show the expected number of entries for an experiment
- with the same number, 201, of qualifying cell divisions if cell fate outcome
- were random.
+In 
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "tab:rat-comparison"
+
+\end_inset
+
+, we also show the expected number of entries for an experiment with the
+ same number, 201, of qualifying cell divisions if cell fate outcome were
+ random.
  In addition, we have included the number of experiments (each with 201
  qualifying cell divisions) that we would expect to have to perform to find
  at least one experiment with a statistical fluctuation that was equal to,
@@ -7423,9 +7458,9 @@ reference "fig:zf-retina-anatomy"
 
 ), but progenitors can, and tend to, move apically before dividing, and
  the daughters will move basally to settle into the correct layer.
- Over a short period of time (20--72 hpf) the retina grows by a factor of
- approximately 12 in cell number, by both expansion in volume and increase
- in density of cells.
+ Over a short period of time (20--72 hours post-fertilisation/hpf) the retina
+ grows by a factor of approximately 12 in cell number, by both expansion
+ in volume and increase in density of cells.
  
 \end_layout
 
@@ -7957,9 +7992,9 @@ reference "fig:zf-lineage-trees"
 \end_inset
 
 ).
- Amazingly, almost all the features deduced from clonal can be observed,
- such as PP divisions following PD divisions, and the near synchronous sister
- divisions 
+ Amazingly, almost all the features deduced from clonal analysis can be
+ observed, such as PP divisions following PD divisions, and the near synchronous
+ sister divisions 
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:zf-synchrony-and-histogenisis"
@@ -8736,8 +8771,8 @@ In addition, it would be preferable to extend the rigorous Bayesian approach
  oesophagus, we had to find a numerical procedure which was sufficiently
  fast and precise to be able to carry out the program.
  This difficulty is compounded by the need to exhaustively sample the parameter
- space, which for the non-equilibrium models considered here are quite high.
- Nevertheless, the field of applied Bayesian methods continue to progress,
+ space, which for the non-equilibrium models considered here is quite large.
+ Nevertheless, the field of applied Bayesian methods continues to progress,
  and modern methods (combined with modern computers) are capable of essentially
  brute-force solution of many challenging problems.
  For example, methods such as Markov Chain Monte-Carlo allow sampling in
@@ -8817,7 +8852,7 @@ key "Mascre2012"
  counts) and label retention studies.
  Furthermore, following wounding the slow cycling population was found to
  be dominant in repair, displaying characteristic elongated clones with
- basal attcdachment several weeks post-wounding.
+ basal attachment several weeks post-wounding.
  Whilst strikingly similar in detail to the observations in 
 \begin_inset CommandInset citation
 LatexCommand citep
