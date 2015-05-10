@@ -925,9 +925,16 @@ key "Clayton2007,Klein2007,Doupe2010"
  It is then possible to measure by counting the distribution of clone sizes.
  Their work demonstrated the existence of a fast-turnover, equipotent population
  of progenitors which is capable of maintaining the tissue.
- This was in direct contrast to textbook models of long-lived stem cells
- supporting columns of more differentiated cells, via a hierarchy of transit-amp
-lifying cells, capped by large plates of terminally differentiated cells.
+ This was in direct contrast to textbook models 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "lajtha1979stem"
+
+\end_inset
+
+ of long-lived stem cells supporting columns of more differentiated cells,
+ via a hierarchy of transit-amplifying cells, capped by large plates of
+ terminally differentiated cells.
  In particular, the evidence rests on: visual observation of large, single-cell
  derived clones with rough boundaries
 \begin_inset Foot
@@ -1131,7 +1138,7 @@ key "Doupe2012"
 \end_inset
 
 , but the section reproduced below was written by the present author with
- BDS.
+ editing by BDS.
 \end_layout
 
 \begin_layout Standard
@@ -1409,6 +1416,9 @@ reference "fig:oes-basal-raw"
 \end_inset
 
 ).
+ Whilst this alone does not rule out the existence of another, small but
+ long-lived stem-cell compartment, we will see that no such cell exist,
+ so we have indeed captured the entirety of the population.
 \end_layout
 
 \begin_layout Standard
@@ -2489,6 +2499,50 @@ reference "fig:oes-joint-data"
  intervals due to a lack of standard nomenclature); these are plotted as
  the error bars in the model, and the graphs form a visual significance
  test with the null hypothesis being the model with the parameters as estimated.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The statistically sophisticated reader may well wonder why we do not do
+ a more formal significance test.
+ A problem is that the distribution we are interested in is not finite in
+ its support --- it is possible for the clone to be of arbitrarily large
+ size, at least theoretically; of course, we can truncate and treat the
+ prediction as a multinomial, though that may cause some need to adjust
+ the effective number of degrees of freedom in some complex way.
+ The larger problem is that of a lack of accepted test for distributions
+ which have very low counts in some bins.
+ Pearson's 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+-test, for instance, is not accurate.
+ On the other hand, an exact test (e.g.
+ using the likelihood function) has complex and not entirely known properties
+ such as power.
+ Indeed, even the question of how to compute the significance of such functions
+ seem to be an open research area 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "keich2006fast"
+
+\end_inset
+
+.
+ We also explored ad-hoc methods such as coalescing the low-count bins into
+ their sums so that 
+\begin_inset Formula $\chi^{2}$
+\end_inset
+
+-test becomes more accurate, but that also makes the answer contigent on
+ unknown statistical properties of the test.
+ Whilst it would be good to have an accepted statistical test of this kind
+ of distribution, further research into the exact test seems out of scope
+ of the current work.
+\end_layout
+
+\end_inset
+
  We draw attention to the fact that these do not contain the uncertainties
  in the parameters themselves.
  Furthermore, 
@@ -2705,8 +2759,20 @@ Effects of atRA treatment
 \end_layout
 
 \begin_layout Standard
+All-trans retinoic acid (atRA) is a clinically approved drug used to treat
+ various skin diseases, including acne, as well as a part of some chemotherapy
+ treatments.
+ It is observed that topical application (in our case as part of the mice's
+ drinking water) causes hyper-proliferation and thickening of the suprabasal
+ layers (both in number of layers and physical thickness).
+ To allow time to reach a new homoeostatic state, mice were treated for
+ 9 days, clonal labeling induced, and treatment then continued for a further
+ 3 to 6 weeks, when clone sizes were scored.
+\end_layout
+
+\begin_layout Standard
 It is straightforward to implement the same inference algorithm to address
- the atRA (all-trans retinoic acid) treated tissue.
+ the atRA treated tissue.
  With the assumption that atRA pre-treatment establishes a new steady-state
  EP cell dynamics, the resulting fit of the model to the experimental data
  is shown in 
@@ -2727,6 +2793,10 @@ reference "fig:oes-atra-homeo"
 .
  Once again, the fits reveal a close agreement of the model with the experimenta
 l data.
+ It is notable that the effect seems confined to the rates of the model,
+ and even the ratio of stratification rate to division rate seems unaltered.
+ This suggests that there is a linked mechanism for both, in that local
+ occurence of one drives the other in order to maintain homoeostasis.
 \end_layout
 
 \begin_layout Standard
@@ -3084,8 +3154,12 @@ m which maintains the tissue, which can be quantitatively modelled by a
  Moreover, we have shown that this model can capture the effect of atRA
  treatment through a straightforward adjustment of the overall timescale
  (the average EP cell division rate and stratification rate of cells committed
- to differentitation increase proportionally).
- 
+ to differentitation increase proportionally, leading to the same 
+\begin_inset Formula $\rho$
+\end_inset
+
+, the ratio of progenitors in the basal layer), suggesting that the mechanism
+ for proliferation and stratification is linked and not independently controlled.
 \end_layout
 
 \begin_layout Standard
@@ -3310,13 +3384,14 @@ hematopoietic marker
 \end_inset
 
 .
- They are simple antibodies which attach to particular molecules that we
- have imposed a narrative upon.
+ They are simple antibodies which attach to particular molecules upon which
+ we have imposed a narrative.
  Those molecules exist momentarily, but we try to assign teleological function
  to them; we should be amazed that this can work, and not surprised when
  it fails a little.
  Many experiments, for instance in the context of cancer, rely on the qualitativ
-e response from Ki67 as evidence of greater or lesser proliferation.
+e response from Ki67 as evidence of greater or lesser proliferation and
+ thus efficacy of treatment.
  What we have observed is that in the limit of very fast cycle, the link
  between proliferation and Ki67 response decouples and cannot be trusted
  on a quantitative level.
@@ -6350,7 +6425,9 @@ key "Lopez-Garcia2010"
  However, the central nervous system (CNS) is fundamentally different, as
  most neurons are not replaced during adult life.
  Thus, we are dealing with a system which is not only not in homoeostasis,
- it is also very far from equilibrium.
+ it is also very far from equilibrium in the sense that one cannot, for
+ example, attempt to analyse it as linearised perturbations over an equilibrium
+ background.
 \end_layout
 
 \begin_layout Standard
@@ -6404,16 +6481,43 @@ null hypothesis
 \end_layout
 
 \begin_layout Standard
-The possibility that such a process could exist is given by 
+The vertebrate retina is has a conserved structure and development.
+ It initially forms as an outgrowth of the central nervous system (CNS),
+ with retinal progenitor cells (RPCs) forming a pseudo-epithelium which
+ grows in number and eventually differentiating into stratified layers of
+ functionally different cells, e.g.
+ photoreceptors, neurons, etc.
+ Early lineage studies in several species 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "holt1988cellular,turner1986common,fekete1994clonal,reese1999clonal"
+
+\end_inset
+
+ showed that clones resulting from RPCs are highly heterogeneous in both
+ size and eventual cell type composition.
+ Nevertheless, there appear to be highly conserved ordering in which various
+ differentiated cell types appear, possibly in connection with the order
+ that these cell types evolved.
+ Furthermore, within a species, the development of each retina appears extremely
+ reproducible (and doubly so within each individual animal).
+ Thus, we have a fascinating question as to how this process is regulated;
+ for instance, two extreme possibilities are complete cell-by-cell specification
+ of spatio-temporal behaviour (which is indeed the case in, say, fruitflies),
+ or complete stochasticity on the individual cell level, but with complex
+ inter-cell signalling to create the eventual structure.
+\end_layout
+
+\begin_layout Standard
+In 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Cayouette2003"
 
 \end_inset
 
-, which showed that isolated cultured rat retinal progenitor cells (RPCs)
- will generate the same proportions of differentiated retinal cell types
- (both neuronal and ganglial) as 
+, it was shown that isolated cultured rat RPCs will generate the same proportion
+s of differentiated retinal cell types (both neuronal and ganglial) as 
 \emph on
 in vivo
 \emph default
@@ -6430,8 +6534,9 @@ key "Turner1987"
 \end_inset
 
 .
- Just like in epithelium, we have the dual combination of individual heterogenei
-ty but tissue level regulation, seemingly without cell-cell interaction.
+ Thus, just like in epithelium, we have the dual combination of individual
+ heterogeneity but tissue level regulation, seemingly without cell-cell
+ interaction.
  We are thus encouraged to seek a stochastic model of independent RPCs,
  where individual fate choice is controlled by some fixed set of probabilities.
 \end_layout
@@ -6707,7 +6812,7 @@ Using the reconstructed lineage data, we first asked how E20 RPCs achieve
  Since the P/P mode of division accounts for only a small fraction, these
  results indicate that differentiative (D/D) divisions, and to a lesser
  extent self-renewing (P/D) divisions, are the major source of neurogenesis
- and gliogenesis in the perinatal retina, at least in culture.
+ and gliogenesis in the (cultured RPCs from) perinatal retina.
  Although these numbers point unambiguously to the predominance of D/D and
  P/D divisions at this stage of retinogenesis, they leave open the question
  of whether the balance of these division modes changes significantly over
@@ -6726,9 +6831,9 @@ Using the reconstructed lineage data, we first asked how E20 RPCs achieve
 \end_layout
 
 \begin_layout Standard
-The similarity in the relative division ratios between one generation and
- the next suggests that the balance between proliferation and differentiation
- of a RPC is not influenced by the fate of its parent.
+The similarity in the division ratios between one generation and the next
+ suggests that the balance between proliferation and differentiation of
+ a RPC is not influenced by the fate of its parent.
  In other words, the division mode of a given RPC (P/P, P/D or D/D) is unpredict
 able and, in this sense, stochastic.
  To test this possibility directly, we compared the chance of finding a
@@ -6838,8 +6943,8 @@ g in a D/D division.
 These results suggest that, at least from E20 and over the timecourse of
  the experiment in vitro, the mode of division of RPCs is stochastic with
  biased probabilities that remain approximately fixed.
- Our previous findings that the size distribution of clones that develop
- in clonal-density cultures is very similar to that of clones that develop
+ Previous findings that the size distribution of clones that develop in
+ clonal-density cultures is very similar to that of clones that develop
  
 \emph on
 ex vivo
@@ -6925,6 +7030,7 @@ Top
 : average cell cycle time (mean + population s.d.) of RPCs generating all
  the different combinations of daughter cell pairs observed in this study.
  A, amacrine; B, bipolar; M, Müller; P, progenitor cell; R, rod photoreceptor.
+ There are no significant differences in cycle time.
  
 \series bold
 Bottom
@@ -6971,16 +7077,26 @@ reference "fig:rat-cycle-correlations"
 \end_inset
 
 , left).
- However, when we measured the difference in cell cycle times of all the
- daughter cells of P/P divisions (n=21), we found a standard deviation of
- 17 hours, significantly smaller than 
+ 
+\end_layout
+
+\begin_layout Standard
+However, there is a significant correlation between cell cycle times of
+ sister RPCs: we found the standard deviation of the difference between
+ sister cycle times of 17 hours (
+\begin_inset Formula $n=21$
+\end_inset
+
+), significantly smaller than 
 \begin_inset Formula $\sqrt{2}\times19$
 \end_inset
 
- hours, where 19 hours is the standard deviation of all cell cycle times,
+ hours (where 19 hours is the standard deviation of all cell cycle times)
  which would be expected if their division times were uncorrelated.
- This result suggests a degree of synchrony in the timing of division of
- sister RPCs that might contribute to the general timing of retinogenesis.
+ Whilst it is not possible to pinpoint the source of this correlation, we
+ believe it is due to sister progenitor cells having a much closer internal
+ state (in terms of their gene and protein expression levels) than two unrelated
+ RPCs.
 \end_layout
 
 \begin_layout Standard
@@ -6988,16 +7104,17 @@ These results suggested that RPCs do not depend on mechanisms that count
  cell cycle time or the number of divisions to regulate lineage termination.
  By refining the stochastic model associated with the modes of division
  to include a log-normal spectrum of division times (consistent with the
- experimental data), a Monte Carlo simulation shows lineage termination
- times that agree with the overall distribution of termination times obtained
- experimentally (
+ experimental data, incorporating the observed correlation between sister
+ RPCs), a Monte Carlo simulation shows lineage termination times that agree
+ with the overall distribution of termination times obtained experimentally
+ (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:rat-cycle-correlations"
 
 \end_inset
 
-, right).
+, bottom).
  Together, these results indicate that the timing of lineage termination,
  and thus the overall size of the retina, may be explained simply as the
  result of a combination of stochastic fate decisions.
@@ -7101,9 +7218,16 @@ Previous experiments have shown that rod photoreceptors represent 73% of
  point in their lineage to generate exclusively RPh cells, thereby greatly
  increasing the number of RPh cells that can be produced from the same RPC
  pool size.
- Although differences may exist between in vivo and in vitro lineage progression
-, the continuous observation of RPC lineages performed in this study allowed
- us to begin to address this problem directly.
+ Although differences may exist between 
+\emph on
+in vivo
+\emph default
+ and 
+\emph on
+in vitro
+\emph default
+ lineage progression, the continuous observation of RPC lineages performed
+ in this study allowed us to begin to address this problem directly.
 \end_layout
 
 \begin_layout Standard
@@ -7285,7 +7409,7 @@ From this analysis, we noticed, for example, that the large entry for (RPh,
  Clearly, these cannot be explained simply as a number fluctuation, and
  although the chronology of cell type production might somewhat influence
  lineage selection, these results suggest that, in addition to stochastic
- mechanisms, specific recurring lineages or lineage priming may play a part
+ mechanisms, specific recurring lineages or lineage priming play a part
  in retinogenesis.
 \end_layout
 
@@ -7360,7 +7484,9 @@ s.
  internal clock, which is biases them towards renewal.
  Another possibility is that there is some cell-extrinsic chemical factors
  which biases the cells, and it is the physical proximity of related cells
- which cause the correlated fate choice.
+ which cause the correlated fate choice; this is admittedly unlikely since
+ the large clones from which the large lineage trees were rare, and thus
+ well-separated on average.
  The other significant excesses are concentrated in lineages with only amacrine
  and bipolar cells.
  A possible interpretation of these significant excesses, along with the
@@ -7458,8 +7584,8 @@ reference "fig:zf-retina-anatomy"
 
 ), but progenitors can, and tend to, move apically before dividing, and
  the daughters will move basally to settle into the correct layer.
- Over a short period of time (20--72 hours post-fertilisation/hpf) the retina
- grows by a factor of approximately 12 in cell number, by both expansion
+ Over a short period of time (20--72 hours post-fertilisation/hpf) the number
+ of cells in the retina grows by a factor of approximately 12, with an expansion
  in volume and increase in density of cells.
  
 \end_layout
@@ -7541,8 +7667,8 @@ reference "fig:zf-retina-anatomy"
 , right), it seems natural to ask if there is actually a wave of proliferation
  that proceeds the differentiation.
  To dissect this behaviour, we used a transgenic fish which labels proliferating
- RPCs with destabilized Green Fluorescent Protein (GFP) to literally visualise
- the proliferation wave (
+ RPCs with destabilized geminin-GFP (a marker for G2, S and M phases of
+ the cell cycle) to visualise the proliferation wave (
 \begin_inset CommandInset ref
 LatexCommand formatted
 reference "fig:zf-fucci"
@@ -8316,6 +8442,18 @@ null hypothesis
  for fate choice.
  We found that this simple hypothesis is in agreement with the observed
  clonal size evolution and pattern of fate choice in live imaged clones.
+ Although we did not use any formal method to select the parameters of the
+ model, our method of trying various combinations of parameters can be seen
+ as a manual implementation of approximate Bayesian computation 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "toni2009approximate"
+
+\end_inset
+
+ --- the fit against clonal counts is an approximation to the likelihood
+ function, and the posterior search proceeded mostly by grid search after
+ rejecting clearly unlikely priors.
 \end_layout
 
 \begin_layout Standard
@@ -8736,7 +8874,7 @@ in vitro
 \end_layout
 
 \begin_layout Itemize
-We extended theoretical understanding of supercritical, Markov branching
+We extended the theoretical understanding of supercritical, Markov branching
  processes, specifically the link between cell cycle distributions and limit
  distributions of clone sizes.
  We find some bounds on theoretically allowed limit distributions and a
@@ -8801,7 +8939,39 @@ nts), or nearby cells could actively inhibit each other via cell-cell signals.
 \end_layout
 
 \begin_layout Standard
-However, the primary driving force behind many of the works in this thesis
+Finally, we would like to highlight a latent tension which is present throughout
+ this work.
+ Although we have presented a view which is quite mechanistic, using models
+ which explicitly refer to different types of cells and their behaviour,
+ it must be kept in mind that these are parts of the 
+\emph on
+model
+\emph default
+ and as such they only make sense within those models.
+ For example, it would not be contradictory if one day we discover that
+ basal progenitors in epithelium are actually composed of two distinct sub-popul
+ations distinguishable by some particular set of protein or RNA concentrations
+ --- our model in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:model"
+
+\end_inset
+
+ would still retain its validity as a coarse-grained model.
+ Indeed, given what we know of the cell cycle, we could treat the various
+ phases as distinct cell types which follow in strict order, with the mitosis
+ phase giving rise to two daughters.
+ However, within the precision of the experiments that we have been looking
+ at, that level of detail was not necessary, and would actually creates
+ more problems in terms of the need to find a larger set of parameters.
+ As such, where we had a choice, we erred on the side of a simpler model,
+ and allowing its failures to point toward where more experiment will be
+ needed.
+\end_layout
+
+\begin_layout Standard
+Ultimately, the primary driving force behind many of the works in this thesis
  has been novel experiments, which yield new forms of data that have no
  established method of analysis.
  We want to emphasise the importance of taking the data as the primary object
