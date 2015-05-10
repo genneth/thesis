@@ -1,0 +1,137 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+
+\lang british
+Stochastic Cell Fate Choice from Lineage Tracing
+\begin_inset space \hfill{}
+\end_inset
+
+Gen Zhang
+\end_layout
+
+\begin_layout Section*
+
+\lang british
+Abstract
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+Advances in genetic methods for lineage tracing offers a new way to observe
+ and dissect cell fate choice.
+ Specifically, the ability to tag and eventually observe the fate of individual
+ cells allows classification beyond instantaneous expression of RNA or protein.
+ We thus build stochastic models which directly predict the fate outcomes
+ of progenitor cells in different tissues, and use experimental data to
+ quantify the effective parameters in these models.
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+We begin by quantitatively studying mouse oesophageal lining, an extremely
+ simple model tissue for stratified epithelia in homoeostasis.
+ After establishing that there exists only one progenitor population responsible
+ for maintenance, we postulate a simple model of critical branching, and
+ measure the parameters of the model from lineage tracing data.
+ We use this model to understand drug action and behaviour under wounding.
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+We further develop the theory of branching processes, focusing on the behaviour
+ of super-critical processes and the link between cell cycle distribution
+ and asymptotic size distribution.
+ We establish some novel theorems characterising legitimate asymptotic size
+ distributions, and a formula to recover cell cycle distributions from such
+ size distributions.
+\end_layout
+
+\begin_layout Standard
+
+\lang british
+Finally, we turn to the development of vertebrate central nervous system,
+ using the retina as a proxy.
+ We first look at rat retinal progenitors in vitro, establishing that a
+ stochastic model of fate choice is possible.
+ We then turn to zebrafish embryos, which allow live imaging throughout
+ the development process.
+ Although complex, we find that a simple model is nevertheless sufficient
+ to explain the data, though necessarily more descriptive than quantitatively
+ precise.
+\end_layout
+
+\end_body
+\end_document
