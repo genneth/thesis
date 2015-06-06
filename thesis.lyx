@@ -1212,7 +1212,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename basal-raw-gen.pdf
+	filename basal-raw-gen.png
 
 \end_inset
 
@@ -1319,7 +1319,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename basal-scaling.pdf
+	filename basal-scaling.png
 	width 50text%
 
 \end_inset
@@ -2309,7 +2309,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename intermouse-tau-basal.pdf
+	filename intermouse-tau-basal.png
 	scale 80
 
 \end_inset
@@ -2320,7 +2320,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename intermouse-tau-normal.pdf
+	filename intermouse-tau-normal.png
 	scale 80
 
 \end_inset
@@ -2580,13 +2580,13 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename normal-22-days.pdf
+	filename normal-22-days.png
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename normal-30-days.pdf
+	filename normal-30-days.png
 
 \end_inset
 
@@ -2596,7 +2596,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename normal-12-weeks.pdf
+	filename normal-12-weeks.png
 
 \end_inset
 
@@ -2657,7 +2657,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename basal-comparison.pdf
+	filename basal-comparison.png
 
 \end_inset
 
@@ -2854,13 +2854,13 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename atRA-homeo-3-weeks.pdf
+	filename atRA-homeo-3-weeks.png
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename atRA-post-30-days-joint.pdf
+	filename atRA-post-30-days-joint.png
 	BoundingBox 0bp 15bp 216bp 216bp
 
 \end_inset
@@ -2945,14 +2945,14 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename atRA-posttreat-30-days.pdf
+	filename atRA-posttreat-30-days.png
 	width 50col%
 
 \end_inset
 
 
 \begin_inset Graphics
-	filename atRA-homeo-6-weeks.pdf
+	filename atRA-homeo-6-weeks.png
 	width 50col%
 
 \end_inset
@@ -3073,7 +3073,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename singles.pdf
+	filename singles.png
 
 \end_inset
 
@@ -3884,7 +3884,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename gamma-set.pdf
+	filename gamma-set.png
 	width 75text%
 
 \end_inset
@@ -4054,7 +4054,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename power-set-W.pdf
+	filename power-set-W.png
 	width 75text%
 
 \end_inset
@@ -4065,7 +4065,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename power-set-log-W.pdf
+	filename power-set-log-W.png
 	width 75col%
 
 \end_inset
@@ -4739,7 +4739,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename gamma-inverse.pdf
+	filename gamma-inverse.png
 	width 75text%
 
 \end_inset
@@ -5010,7 +5010,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename multi-modal.pdf
+	filename multi-modal.png
 	width 75text%
 
 \end_inset
@@ -5164,7 +5164,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename empirical-linear.pdf
+	filename empirical-linear.png
 	scale 75
 
 \end_inset
@@ -5175,7 +5175,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename empirical-log.pdf
+	filename empirical-log.png
 	scale 75
 
 \end_inset
@@ -5320,7 +5320,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename theoretical-power.pdf
+	filename theoretical-power.png
 	scale 75
 	BoundingBox 0bp 230bp 595bp 842bp
 	clip
@@ -5387,7 +5387,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename theoretical-exponential.pdf
+	filename theoretical-exponential.png
 	scale 75
 	BoundingBox 0bp 230bp 595bp 842bp
 	clip
@@ -6640,7 +6640,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename retinalLineageData1.pdf
+	filename retinalLineageData1.png
 	lyxscale 30
 	width 100col%
 
@@ -6651,7 +6651,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename retinalLineageData2.pdf
+	filename retinalLineageData2.png
 	lyxscale 30
 	width 100col%
 
@@ -6696,7 +6696,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename retinalLineageData3.pdf
+	filename retinalLineageData3.png
 	lyxscale 30
 	width 100col%
 
@@ -6707,7 +6707,7 @@ status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename retinalLineageData4.pdf
+	filename retinalLineageData4.png
 	lyxscale 30
 	width 100col%
 
@@ -6749,7 +6749,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename retinalLineageData5.pdf
+	filename retinalLineageData5.png
 	lyxscale 30
 	width 100col%
 
@@ -6994,7 +6994,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename cycleLengthvsFate.pdf
+	filename cycleLengthvsFate.png
 	width 70col%
 
 \end_inset
@@ -7005,7 +7005,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename cycleLengthHist.pdf
+	filename cycleLengthHist.png
 	width 75col%
 
 \end_inset
@@ -7129,7 +7129,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename divisionSynchrony.pdf
+	filename divisionSynchrony.png
 	width 55col%
 
 \end_inset
@@ -7140,7 +7140,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename finishTimesHist.pdf
+	filename finishTimesHist.png
 	width 55col%
 
 \end_inset
@@ -7267,7 +7267,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename comparisonTable.pdf
+	filename comparisonTable.png
 	width 100col%
 
 \end_inset
@@ -7997,7 +7997,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename 3de.pdf
+	filename 3de.png
 
 \end_inset
 
@@ -8074,7 +8074,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename 3ghi.pdf
+	filename 3ghi.png
 
 \end_inset
 
@@ -8143,7 +8143,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename live-24h.pdf
+	filename live-24h.png
 	width 100text%
 
 \end_inset
@@ -8153,7 +8153,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename live-image-trees.pdf
+	filename live-image-trees.png
 	width 100text%
 
 \end_inset
